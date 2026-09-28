@@ -1,0 +1,37 @@
+{
+  "currency": "CNY",
+  "hard_requirements": ["前海或福田", "工作日9:00—18:00可用", "每月1小时客户会议可用"],
+  "budgets": {"monthly_max": 4500, "upfront_max": 10000},
+  "candidates": [
+    {
+      "id": "spaces-qianhai-shimao-day-pass",
+      "required_costs_complete": false,
+      "conditions": {"前海或福田": "met", "工作日9:00—18:00可用": "unknown", "每月1小时客户会议可用": "unknown"},
+      "costs": [
+        {"name": "共享办公日票，13天", "kind": "recurring", "amount": 180, "quantity": 13},
+        {"name": "客户会议室1小时，未公开报价", "kind": "recurring", "amount": null},
+        {"name": "前期必要费用，待确认", "kind": "upfront", "amount": null}
+      ]
+    },
+    {
+      "id": "regus-futian-shidai-day-pass",
+      "required_costs_complete": false,
+      "conditions": {"前海或福田": "met", "工作日9:00—18:00可用": "unknown", "每月1小时客户会议可用": "unknown"},
+      "costs": [
+        {"name": "共享办公日票，13天", "kind": "recurring", "amount": 280, "quantity": 13},
+        {"name": "会议室1小时，公开起价", "kind": "recurring", "amount": 280},
+        {"name": "前期必要费用，待确认", "kind": "upfront", "amount": null}
+      ]
+    },
+    {
+      "id": "regus-futian-neo-day-pass",
+      "required_costs_complete": false,
+      "conditions": {"前海或福田": "met", "工作日9:00—18:00可用": "unknown", "每月1小时客户会议可用": "unknown"},
+      "costs": [
+        {"name": "共享办公日票，13天", "kind": "recurring", "amount": 320, "quantity": 13},
+        {"name": "会议室1小时，公开起价", "kind": "recurring", "amount": 350},
+        {"name": "前期必要费用，待确认", "kind": "upfront", "amount": null}
+      ]
+    }
+  ]
+}
