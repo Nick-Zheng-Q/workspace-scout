@@ -1,69 +1,85 @@
 # Workspace Scout
 
-面向个人创业者和小团队的工作空间发现、适配评估与入驻条件核查 Skill。它帮助 agent 从运营方供给、园区或孵化器申请项目及用户已有材料中，找出**具体空间＋具体使用或入驻方案**，核查实际用途、资格、费用和退出条件，再给出值得联系的少数候选。
+**Find concrete workspaces. Verify fit and entry terms. Shortlist places worth contacting.**
 
-**状态：公开测试版。** 已通过格式、脚本和安装测试，并做过少量跨城市对照；这些测试尚未证明它能稳定地比不使用 Skill 的 agent 找到更多当前可申请的扶持空间。不要把输出当作已确认的空余、报价、政策资格或入驻批准。
+Workspace Scout is a Codex Skill for solo founders and small teams looking for a place to work. It searches across workspace operators, incubator or support programs, and materials you already have. Its unit of comparison is a **specific space plus a specific use or admission plan**—not just a district, building, or program name.
 
-## 适用范围
+**Status: public beta.** Format, script, and installation checks pass. Limited cross-city comparisons have not shown a consistent improvement over an agent without this Skill in finding currently open, application-based workspace programs. Treat availability, prices, incentives, and eligibility as unconfirmed until the relevant operator or authority verifies them.
 
-- 软件、设计、咨询、内容制作等个人或小团队的办公空间；可记录接待、拍摄、录音、设备留置等特殊要求。
-- 支持从零寻找，也支持审查已有的园区资料、报价、申请说明和合同草稿。
-- 不直接判断餐饮门店、生产车间、实验室等专门行业的合规性。
-- 不自动提交申请、发送资料、签约或联系运营方。
+[简体中文说明](#简体中文)
 
-核心方法见 [SKILL.md](SKILL.md)；搜索方向见 [references/search-guide.md](references/search-guide.md)。
+## What it covers
 
-## 安装
+- Workspaces for software, design, consulting, content production, and similar solo or small-team work.
+- Quiet work, meetings, visitors, filming, recording, equipment storage, hours of access, and other needs that can change the search.
+- Two starting points: discover options from a user brief, or review spaces and documents the user already has.
+- Separate checks for business fit, admission requirements, full costs, exit terms, and conditional policy benefits.
 
-需要能够读取本地 Skill 的 Codex 环境，以及用于费用检查的 Python 3（仅在运行该脚本时需要）。从本仓库目录运行：
+It does **not** establish that a restaurant, production workshop, laboratory, or other specialized facility satisfies its industry-specific requirements. It does not submit applications, send personal documents, sign agreements, or contact operators.
+
+Read [SKILL.md](SKILL.md) for the workflow and [the search guide](references/search-guide.md) for source discovery and follow-up.
+
+## Install
+
+From a local checkout of this repository:
 
 ```sh
 ./install.sh
 ```
 
-默认安装到 `~/.agents/skills/workspace-scout`。如需仅供当前项目使用，运行 `./install.sh --project`，安装到**本仓库**的 `.agents/skills/workspace-scout`。也可指定其他 Skill 目录：
+The default destination is `~/.agents/skills/workspace-scout`. To install only for **this repository**, use `./install.sh --project`; it writes to this repository's `.agents/skills/workspace-scout`. To choose another Skill directory:
 
 ```sh
 ./install.sh --dest-dir /path/to/skills
 ```
 
-安装脚本只复制运行 Skill 所需的文件及许可证；不会更改现有同名安装。安装后可直接提出工作空间问题，由宿主 agent 根据 Skill 描述决定是否调用，或显式使用 `$workspace-scout`。实际搜索能力取决于宿主 agent 已获准使用的工具。
+The installer copies only the runtime Skill files and [license](LICENSE). It refuses to overwrite an existing installation. An authorized host agent can invoke the Skill based on its description, or you can refer to `$workspace-scout` explicitly. Search and document access depend on the tools available to that agent.
 
-## 更新
+## Update
 
-先获取本仓库的新版本（例如通过 Git 拉取），再在**同一个本地仓库目录**运行：
+First update your local checkout, for example with `git pull --ff-only`. Then run:
 
 ```sh
 ./update.sh
 ```
 
-如果安装时用了 `--project` 或 `--dest-dir`，更新时传入相同参数。`update.sh` **不会联网下载新版**；它用当前仓库内容替换已安装版本，并把旧版备份到安装目录旁的 `workspace-scout-backups`。它会拒绝替换符号链接或无法识别的同名目录。
+Pass the same `--project` or `--dest-dir` option you used at installation. `update.sh` **does not download a new release**: it replaces the installed copy with files from this checkout and backs up the previous copy beside the Skill directory under `workspace-scout-backups`. It refuses to replace a symlink or an unrelated directory.
 
-## 费用检查脚本
+## Optional cost and constraint check
 
-可选脚本只核算已输入的金额与硬条件状态，**不会验证来源真实性或自动补齐漏报费用**：
+The helper calculates totals and hard-condition states from data you provide. It does **not** verify evidence or infer omitted charges:
 
 ```sh
 python3 scripts/check_candidates.py path/to/input.json --pretty
 ```
 
-输入格式见 [references/check-input.md](references/check-input.md)。
+See [the input format](references/check-input.md). Python 3 is needed only to run this helper or the Python tests.
 
-## 测试
+## Tests and evidence
 
 ```sh
 sh tests/test_install.sh
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
-格式检查可用 Codex 的 `skill-creator` Skill 附带的 `quick_validate.py`。搜索效果的测试方法与结果保存在 [tests/eval](tests/eval)；历史报告沿用当时的 `workspace-select` 名称；其中的网页和报价仅用于复盘，不代表今天仍可申请或适用。
+Codex's `skill-creator` also provides `quick_validate.py` for Skill structure checks. Evaluation protocols and reports are in [tests/eval](tests/eval). Historical reports use the former name `workspace-select`; their links and quoted prices are test records, **not evidence of current availability**.
 
-## 使用时的边界
+## Important limits
 
-每次检索都应从用户当前业务和可接受区域出发，不把前海、福田或 OPC 当作默认条件。新闻和第三方房源可以提供线索，但具体资格、现价、名额和包含服务应回到对应发布方或运营方核实。未确认的免费工位、补贴或优惠不能直接抵减基础预算。用户联系或申请前，应再次核对当期条款。
+Search terms should come from the user's actual work and acceptable locations. Neither Qianhai, Futian, nor “OPC” is a default requirement. News articles and third-party listings can reveal leads, but current prices, capacity, included services, application windows, and eligibility need confirmation from the relevant publisher or operator. Unapproved subsidies and conditional discounts must not be deducted from baseline costs. Recheck time-sensitive facts before contacting or applying.
 
-## 许可证
+## License
 
-本项目使用 [PolyForm Shield License 1.0.0](LICENSE)，并在许可证末尾列有须保留的 Dayweaver 项目声明。该条款允许在许可范围内使用、转载和修改，但不允许用本软件提供与许可方及其相关产品竞争的产品。它**不是 OSI 定义的开源许可证**；准确表述应是「源码公开」。
+This project is distributed under the [PolyForm Shield License 1.0.0](LICENSE), including a required Dayweaver project notice. The license permits use, redistribution, and modification within its terms, but restricts use of the software to provide competing products. It is **source-available, not open source under the [OSI definition](https://opensource.org/osd)**.
 
-这份标准条款限制的是竞争性产品使用，**不保证涵盖一切“为竞品导流”的行为**，也不能阻止他人独立重写类似方法。如果打算以许可证处理具体导流争议，或希望把 Dayweaver 某一业务明确纳入保护范围，发布前应由法律专业人士结合实际权利主体和产品范围审阅。
+The standard license does not necessarily cover every way someone might direct traffic to a competing product, nor can it prevent an independent reimplementation. If that distinction matters for a particular dispute or product line, seek legal review of the rights holder and the products actually covered.
+
+## 简体中文
+
+**Workspace Scout** 帮助个人创业者和小团队寻找、核查并比较工作空间。候选必须具体到“某个空间＋某种使用或入驻方案”，而不是只推荐园区或片区。它会分别检查业务用途、申请条件、完整费用、退出条款及有前提的政策福利，最终给出值得联系的少数候选。
+
+**状态：公开测试版。** 安装与脚本测试已通过，但有限的跨城市对照尚未证明它能稳定地比普通 agent 找到更多当前可申请的扶持空间。价格、空余、优惠和资格都须向对应运营方或主管机构复核；本 Skill 不代替专门行业合规审查，也不会自动申请或联系对方。
+
+从本仓库运行 `./install.sh`，默认安装到 `~/.agents/skills/workspace-scout`；`./install.sh --project` 只安装到**本仓库**。先更新本地仓库，再运行 `./update.sh`；更新脚本本身不会联网。安装和更新都支持 `--dest-dir /path/to/skills`，更新时应使用与安装时相同的选项。测试命令见上方 [Tests and evidence](#tests-and-evidence)。
+
+本项目采用 [PolyForm Shield License 1.0.0](LICENSE)，允许在条款范围内使用、转载和修改，但限制用本软件提供竞争产品。它是**源码公开，不是 OSI 定义的开源**；标准条款也不能保证涵盖所有竞品导流行为。
