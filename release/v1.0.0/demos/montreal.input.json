@@ -1,0 +1,92 @@
+{
+  "currency": "CAD",
+  "hard_requirements": [
+    "published usage permits six desk weekdays",
+    "four private one-hour calls",
+    "availability on requested dates"
+  ],
+  "budgets": {
+    "monthly_max": 350
+  },
+  "candidates": [
+    {
+      "id": "ecto-single-days-and-separate-rooms",
+      "conditions": {
+        "four private one-hour calls": "unknown",
+        "published usage permits six desk weekdays": "met",
+        "availability on requested dates": "unknown"
+      },
+      "required_costs_complete": false,
+      "costs": [
+        {
+          "name": "six single-day passes before tax",
+          "kind": "recurring",
+          "amount": 30,
+          "quantity": 6
+        },
+        {
+          "name": "four separate weekday room hours before tax",
+          "kind": "recurring",
+          "amount": 40,
+          "quantity": 4
+        },
+        {
+          "name": "applicable tax not yet confirmed",
+          "kind": "recurring",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed other compulsory charges",
+          "kind": "recurring",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed setup charges",
+          "kind": "upfront",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed deposit",
+          "kind": "deposit",
+          "amount": null
+        }
+      ]
+    },
+    {
+      "id": "ecto-flexible-monthly",
+      "conditions": {
+        "four private one-hour calls": "unknown",
+        "published usage permits six desk weekdays": "met",
+        "availability on requested dates": "unknown"
+      },
+      "required_costs_complete": false,
+      "costs": [
+        {
+          "name": "published flexible monthly plan before tax",
+          "kind": "recurring",
+          "amount": 200
+        },
+        {
+          "name": "applicable tax not yet confirmed",
+          "kind": "recurring",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed other compulsory charges",
+          "kind": "recurring",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed setup charges",
+          "kind": "upfront",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed deposit",
+          "kind": "deposit",
+          "amount": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "queries": [
+    "site.camden.gov.uk collective free workspace hot desking Camden Collective",
+    "site.ecto.coop tarifs coworking 350 part sociale",
+    "site.justcoglobal.com singapore day pass price coworking",
+    "site:ecto.coop/tous-les-tarifs \"95\" \"150\"",
+    "site:ecto.coop/nos-bureaux \"150\" \"6\"",
+    "site:camdencollective.co.uk \"apply\" \"hot\""
+  ],
+  "follow_up": "Followed provider tariff, membership, hotdesking and application links; searched for public alternative sources after access errors. This compact record is not a complete server-side transcript.",
+  "sources": [
+    {
+      "case": "montreal",
+      "url": "https://ecto.coop/tous-les-tarifs/",
+      "observed_at": "2026-10-19",
+      "access_note": "French price table; public HTML readable after browser-tool timeout",
+      "private_raw_html_sha256": "a566601fb3ab31bb1c3efb6bb6d75eafd07d0f6396e9aca6e954e0312c0c4f11"
+    },
+    {
+      "case": "montreal",
+      "url": "https://ecto.coop/wp-content/uploads/Tout-sur-vos-frais-dadhesion.pdf",
+      "observed_at": "2026-10-19",
+      "access_note": "Two-page membership explanation; repayment restrictions"
+    },
+    {
+      "case": "london",
+      "url": "https://camdencollective.co.uk/hotdesking",
+      "observed_at": "2026-10-19",
+      "access_note": "Scheme text, two hubs, obligations, application link; linked form unreadable"
+    },
+    {
+      "case": "london",
+      "url": "https://camdencollective.co.uk/base-kings-cross",
+      "observed_at": "2026-10-19",
+      "access_note": "Older/differently scoped criteria discovered by search; not applied as current rule"
+    },
+    {
+      "case": "london",
+      "url": "https://www.camden.gov.uk/free-co-working-space-for-your-businesses",
+      "observed_at": "2026-10-19",
+      "access_note": "Limited six-month offer; deadline has no year; current intake unknown"
+    },
+    {
+      "case": "singapore",
+      "url": "https://thehivelavender.com/membership/",
+      "observed_at": "2026-10-19",
+      "access_note": "Day and part-time price, hours, GST exclusion; private facilities not inferred",
+      "private_raw_html_sha256": "c2ec1e743ea928a0f63ed983d782b11111d0ccd567c45ce99c85f8a709dbdfa7"
+    },
+    {
+      "case": "singapore",
+      "url": "https://www.iras.gov.sg/taxes/goods-services-tax-(gst)/basics-of-gst/current-gst-rates",
+      "observed_at": "2026-10-19",
+      "access_note": "Current 9 percent standard rate; scenario, not an invoice"
+    }
+  ]
+}

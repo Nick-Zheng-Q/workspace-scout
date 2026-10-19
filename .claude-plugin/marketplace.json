@@ -1,0 +1,16 @@
+{
+  "name": "workspace-scout-marketplace",
+  "owner": {
+    "name": "Nick-Zheng-Q"
+  },
+  "metadata": {
+    "description": "Workspace research for solo founders and small teams"
+  },
+  "plugins": [
+    {
+      "name": "workspace-scout",
+      "source": "./plugins/workspace-scout",
+      "description": "Discover specific workspace plans for solo founders and small teams. Compare practical fit, admission requirements, full costs, conditional support and exit terms, with dated evidence and questions to ask next."
+    }
+  ]
+}

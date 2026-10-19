@@ -1,0 +1,75 @@
+{
+  "currency": "GBP",
+  "hard_requirements": [
+    "two memberships available",
+    "private client calls",
+    "current intake and eligibility"
+  ],
+  "budgets": {
+    "monthly_max": 600
+  },
+  "candidates": [
+    {
+      "id": "collective-auction-rooms-requested-free-hotdesking",
+      "conditions": {
+        "two memberships available": "unknown",
+        "private client calls": "unknown",
+        "current intake and eligibility": "unknown"
+      },
+      "required_costs_complete": false,
+      "costs": [
+        {
+          "name": "advertised free shared-desk rent if admitted; hub allocation to confirm",
+          "kind": "recurring",
+          "amount": 0
+        },
+        {
+          "name": "unconfirmed other compulsory charges",
+          "kind": "recurring",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed setup charges",
+          "kind": "upfront",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed deposit",
+          "kind": "deposit",
+          "amount": null
+        }
+      ]
+    },
+    {
+      "id": "labs-atrium-camden-six-month-offer",
+      "conditions": {
+        "two memberships available": "unknown",
+        "private client calls": "unknown",
+        "current intake and eligibility": "unknown"
+      },
+      "required_costs_complete": false,
+      "costs": [
+        {
+          "name": "advertised free membership if approved; current round unconfirmed",
+          "kind": "recurring",
+          "amount": 0
+        },
+        {
+          "name": "unconfirmed other compulsory charges",
+          "kind": "recurring",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed setup charges",
+          "kind": "upfront",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed deposit",
+          "kind": "deposit",
+          "amount": null
+        }
+      ]
+    }
+  ]
+}

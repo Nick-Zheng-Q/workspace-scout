@@ -13,12 +13,18 @@ STATUSES = {"met", "unmet", "unknown", "conflict"}
 
 
 def number(value, where):
-    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
+    try:
+        valid = not isinstance(value, bool) and isinstance(value, (int, float)) and math.isfinite(value) and value >= 0
+    except OverflowError:
+        valid = False
+    if not valid:
         raise ValueError(f"{where} must be a non-negative finite number")
     return value
 
 
 def summarize(data):
+    if not isinstance(data, dict):
+        raise ValueError("input must be an object")
     requirements = data.get("hard_requirements", [])
     if not isinstance(requirements, list) or not all(isinstance(x, str) and x for x in requirements) or len(set(requirements)) != len(requirements):
         raise ValueError("hard_requirements must be a list of unique non-empty strings")
@@ -45,7 +51,7 @@ def summarize(data):
             raise ValueError(f"{cid}.conditions must be an object")
         states = {name: conditions.get(name, "unknown") for name in requirements}
         for name, status in states.items():
-            if status not in STATUSES:
+            if not isinstance(status, str) or status not in STATUSES:
                 raise ValueError(f"{cid}.conditions[{name!r}] has invalid status")
         gate = "reject" if "unmet" in states.values() else "verify" if any(s in {"unknown", "conflict"} for s in states.values()) else "pass"
         costs = candidate.get("costs", [])
@@ -61,7 +67,7 @@ def summarize(data):
             if not isinstance(item, dict) or not isinstance(item.get("name"), str) or not item["name"]:
                 raise ValueError(f"{cid}.costs[{j}] needs a name")
             kind = item.get("kind")
-            if kind not in KINDS:
+            if not isinstance(kind, str) or kind not in KINDS:
                 raise ValueError(f"{cid}.costs[{j}] has invalid kind")
             required = item.get("required", True)
             if not isinstance(required, bool):
@@ -76,11 +82,13 @@ def summarize(data):
                     unknown[kind].append(item["name"])
                 else:
                     totals[kind] += amount * quantity
+                    number(totals[kind], f"{cid}.{kind} total")
         # A completeness flag is an assertion by the caller, not evidence that an
         # omitted charge category is zero. Require an explicit zero row instead.
         for kind in KINDS - required_kinds_seen:
             unknown[kind].append(f"no {kind} cost supplied")
         initial_known = totals["upfront"] + totals["deposit"]
+        number(initial_known, f"{cid}.initial total")
         initial_unknown = unknown["upfront"] + unknown["deposit"]
 
         def budget_status(known, missing, limit):

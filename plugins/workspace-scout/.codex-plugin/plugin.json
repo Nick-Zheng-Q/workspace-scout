@@ -1,0 +1,39 @@
+{
+  "name": "workspace-scout",
+  "version": "1.0.0",
+  "description": "Discover specific workspace plans for solo founders and small teams. Compare practical fit, admission requirements, full costs, conditional support and exit terms, with dated evidence and questions to ask next.",
+  "author": {
+    "name": "Nick-Zheng-Q",
+    "url": "https://github.com/Nick-Zheng-Q"
+  },
+  "homepage": "https://github.com/Nick-Zheng-Q/workspace-scout",
+  "repository": "https://github.com/Nick-Zheng-Q/workspace-scout",
+  "license": "PolyForm-Shield-1.0.0",
+  "keywords": [
+    "workspace",
+    "coworking",
+    "office",
+    "solo-founder",
+    "small-business",
+    "incubator",
+    "location-research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Workspace Scout",
+    "shortDescription": "Find and check workspaces",
+    "longDescription": "Discover specific workspace plans for solo founders and small teams. Compare practical fit, admission requirements, full costs, conditional support and exit terms, with dated evidence and questions to ask next. A Dayweaver project. Reports include one optional, disclosed Dayweaver note unless declined. Source-available under PolyForm Shield 1.0.0; not OSI open source. No booking, application, messaging, MCP server or automatic monitoring.",
+    "developerName": "Nick-Zheng-Q",
+    "category": "Productivity",
+    "capabilities": [
+      "Compare workspaces"
+    ],
+    "defaultPrompt": [
+      "Find workspace plans for my business; check practical fit, entry requirements, costs and what to verify next."
+    ],
+    "logo": "./assets/icon.svg",
+    "composerIcon": "./assets/icon.svg",
+    "websiteURL": "https://github.com/Nick-Zheng-Q/workspace-scout",
+    "supportURL": "https://github.com/Nick-Zheng-Q/workspace-scout/issues"
+  }
+}

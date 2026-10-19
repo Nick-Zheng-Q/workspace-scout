@@ -2,3 +2,6 @@ __pycache__/
 *.py[cod]
 .DS_Store
 .agents/skills/workspace-scout/
+.agents/workspace-scout-backups/
+.release-private/
+dist/

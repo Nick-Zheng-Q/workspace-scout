@@ -1,0 +1,318 @@
+{
+  "date": "2026-10-19",
+  "stage": "A/B preparation; D not executed",
+  "environment": {
+    "os": "macOS arm64",
+    "python": "3.14",
+    "skills_cli": "1.7.2",
+    "codex": "0.159.2",
+    "claude_code": "2.1.198",
+    "gitleaks": "8.30.1"
+  },
+  "normalization": "Temporary home/export paths and host utility/interpreter locations are replaced with placeholders. Commands/results are real; only relevant output tails are retained. Raw logs are private. No fresh-OS or new effectiveness benchmark claim.",
+  "checks": [
+    {
+      "test": "clean-install",
+      "command": "/bin/sh <TEMP>/source/install.sh",
+      "exit_code": 0,
+      "output": "Installed workspace-scout: <TEMP_HOME>/.agents/skills/workspace-scout\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "clean-update",
+      "command": "/bin/sh <TEMP>/source/update.sh",
+      "exit_code": 0,
+      "output": "Updated workspace-scout: <TEMP_HOME>/.agents/skills/workspace-scout\nPrevious version backed up: <TEMP_HOME>/.agents/workspace-scout-backups/workspace-scout-20261019-232735-35813\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "clean-helper",
+      "command": "python3 <TEMP_HOME>/.agents/skills/workspace-scout/scripts/check_candidates.py <TEMP>/source/tests/case5-2026-09-23-costs.json",
+      "exit_code": 0,
+      "output": "{\"candidates\": [{\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"前海或福田\": \"met\", \"工作日9:00—18:00可用\": \"unknown\", \"每月1小时客户会议可用\": \"unknown\"}, \"id\": \"spaces-qianhai-shimao-day-pass\", \"known_monthly\": 2340, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"no deposit cost supplied\"], \"recurring\": [\"客户会议室1小时，未公开报价\"], \"upfront\": [\"前期必要费用，待确认\"]}, \"upfront_budget_status\": \"unknown\"}, {\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"前海或福田\": \"met\", \"工作日9:00—18:00可用\": \"unknown\", \"每月1小时客户会议可用\": \"unknown\"}, \"id\": \"regus-futian-shidai-day-pass\", \"known_monthly\": 3920, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"no deposit cost supplied\"], \"recurring\": [], \"upfront\": [\"前期必要费用，待确认\"]}, \"upfront_budget_status\": \"unknown\"}, {\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"前海或福田\": \"met\", \"工作日9:00—18:00可用\": \"unknown\", \"每月1小时客户会议可用\": \"unknown\"}, \"id\": \"regus-futian-neo-day-pass\", \"known_monthly\": 4510, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"over\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"no deposit cost supplied\"], \"recurring\": [], \"upfront\": [\"前期必要费用，待确认\"]}, \"upfront_budget_status\": \"unknown\"}], \"currency\": \"CNY\"}\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-plugin-validate",
+      "command": "claude plugin validate --strict <TEMP>/source/plugins/workspace-scout",
+      "exit_code": 0,
+      "output": "Validating plugin manifest: <TEMP>/source/plugins/workspace-scout/.claude-plugin/plugin.json\n\n✔ Validation passed\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-marketplace-validate",
+      "command": "claude plugin validate --strict <TEMP>/source",
+      "exit_code": 0,
+      "output": "Validating marketplace manifest: <TEMP>/source/.claude-plugin/marketplace.json\n\n✔ Validation passed\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-marketplace-add",
+      "command": "claude plugin marketplace add <TEMP>/source",
+      "exit_code": 0,
+      "output": "Adding marketplace…✔ Successfully added marketplace: workspace-scout-marketplace (declared in user settings)\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-plugin-install",
+      "command": "claude plugin install workspace-scout@workspace-scout-marketplace",
+      "exit_code": 0,
+      "output": "Installing plugin \"workspace-scout@workspace-scout-marketplace\"...✔ Successfully installed plugin: workspace-scout@workspace-scout-marketplace (scope: user)\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-plugin-list",
+      "command": "claude plugin list --json",
+      "exit_code": 0,
+      "output": "[\n  {\n    \"id\": \"workspace-scout@workspace-scout-marketplace\",\n    \"version\": \"1.0.0\",\n    \"scope\": \"user\",\n    \"enabled\": true,\n    \"installPath\": \"<TEMP>/claude/plugins/cache/workspace-scout-marketplace/workspace-scout/1.0.0\",\n    \"installedAt\": \"2026-10-19T15:27:37.188Z\",\n    \"lastUpdated\": \"2026-10-19T15:27:37.188Z\"\n  }\n]\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-plugin-details",
+      "command": "claude plugin details workspace-scout@workspace-scout-marketplace",
+      "exit_code": 0,
+      "output": "workspace-scout 1.0.0\n  Discover specific workspace plans for solo founders and small teams. Compare practical fit, admission requirements, full costs, conditional support and exit terms, with dated evidence and questions to ask next.\n  Source: workspace-scout@workspace-scout-marketplace\n\nComponent inventory\n  Skills (1)  workspace-scout\n  Agents (0)\n  Hooks (0)\n  MCP servers (0)\n  LSP servers (0)\n\nProjected token cost\n  Always-on:   ~31 tok   added to every session\n\nPer-component (rounded)\n  component        always-on  on-invoke\n  workspace-scout        ~30       ~850\n\n  On-invoke cost is paid each time a skill or agent fires.\n  Token counts are estimates and may differ from actual usage.\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "codex-marketplace-add",
+      "command": "codex plugin marketplace add <TEMP>/source --json",
+      "exit_code": 0,
+      "output": "{\n  \"marketplaceName\": \"workspace-scout-marketplace\",\n  \"installedRoot\": \"<TEMP>/source\",\n  \"alreadyAdded\": false\n}\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "codex-plugin-install",
+      "command": "codex plugin add workspace-scout@workspace-scout-marketplace --json",
+      "exit_code": 0,
+      "output": "{\n  \"pluginId\": \"workspace-scout@workspace-scout-marketplace\",\n  \"name\": \"workspace-scout\",\n  \"marketplaceName\": \"workspace-scout-marketplace\",\n  \"version\": \"1.0.0\",\n  \"installedPath\": \"<TEMP>/codex/plugins/cache/workspace-scout-marketplace/workspace-scout/1.0.0\",\n  \"authPolicy\": \"ON_INSTALL\"\n}\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "codex-plugin-list",
+      "command": "codex plugin list --json",
+      "exit_code": 0,
+      "output": "{\n  \"installed\": [\n    {\n      \"pluginId\": \"workspace-scout@workspace-scout-marketplace\",\n      \"name\": \"workspace-scout\",\n      \"marketplaceName\": \"workspace-scout-marketplace\",\n      \"version\": \"1.0.0\",\n      \"installed\": true,\n      \"enabled\": true,\n      \"source\": {\n        \"source\": \"local\",\n        \"path\": \"<TEMP>/source/plugins/workspace-scout\"\n      },\n      \"marketplaceSource\": {\n        \"sourceType\": \"local\",\n        \"source\": \"<TEMP>/source\"\n      },\n      \"installPolicy\": \"AVAILABLE\",\n      \"authPolicy\": \"ON_INSTALL\"\n    }\n  ],\n  \"available\": []\n}\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "skills-local-list",
+      "command": "npm exec --yes --package skills@1.7.2 -- skills add <TEMP>/source --skill workspace-scout --list",
+      "exit_code": 0,
+      "output": "\n███████╗██╗  ██╗██╗██╗     ██╗     ███████╗\n██╔════╝██║ ██╔╝██║██║     ██║     ██╔════╝\n███████╗█████╔╝ ██║██║     ██║     ███████╗\n╚════██║██╔═██╗ ██║██║     ██║     ╚════██║\n███████║██║  ██╗██║███████╗███████╗███████║\n╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝╚══════╝\n\n┌   skills \n│\n│  Tip: use the --yes (-y) and --global (-g) flags to install without prompts.\n│\n◇  Source: <TEMP>/source\n│\n◇  Local path validated\n│\n◇  Found 1 skill\n\n│\n◇  Available Skills\n│\n│    workspace-scout\n│\n│      为个人创业者或小团队发现、核查和比较具体工作空间及使用或入驻方案；适用于办公、设计、咨询、内容制作等需求，或审查已有空间材料。不适用于直接评估餐饮门店、生产车间和实验室的专门合规条件。\n\n│\n└  Use --skill <name> to install specific skills\n\nnpm notice\nnpm notice New major version of npm available! 11.19.1 -> 12.2.0\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0\nnpm notice To update run: npm install -g npm@12.2.0\nnpm notice\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "skills-local-install",
+      "command": "npm exec --yes --package skills@1.7.2 -- skills add <TEMP>/source --skill workspace-scout --agent codex claude-code --copy -y --json",
+      "exit_code": 0,
+      "output": "[\n  {\n    \"name\": \"workspace-scout\",\n    \"status\": \"installed\",\n    \"source\": \"<TEMP>/source\",\n    \"ref\": null,\n    \"hash\": \"0253bed5d452f0c29cb3834a0038ecf77a625738608b221bb4a73eff4f63bf7f\",\n    \"path\": \"<TEMP>/.agents/skills/workspace-scout\",\n    \"scope\": \"project\",\n    \"agents\": [\n      \"Codex\",\n      \"Claude Code\"\n    ],\n    \"mode\": \"copy\",\n    \"security\": null\n  }\n]\n\n┌   skills \n│\n│  Tip: use the --yes (-y) and --global (-g) flags to install without prompts.\n│\n●  Selected 1 skill: workspace-scout\n\n│\n◇  Installation Summary ─────────────╮\n│                                    │\n│  ./.agents/skills/workspace-scout  │\n│    copy → Codex, Claude Code       │\n│                                    │\n├────────────────────────────────────╯\n\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "skills-installed-helper",
+      "command": "python3 <TEMP>/.agents/skills/workspace-scout/scripts/check_candidates.py <TEMP>/source/tests/case5-2026-09-23-costs.json",
+      "exit_code": 0,
+      "output": "{\"candidates\": [{\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"前海或福田\": \"met\", \"工作日9:00—18:00可用\": \"unknown\", \"每月1小时客户会议可用\": \"unknown\"}, \"id\": \"spaces-qianhai-shimao-day-pass\", \"known_monthly\": 2340, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"no deposit cost supplied\"], \"recurring\": [\"客户会议室1小时，未公开报价\"], \"upfront\": [\"前期必要费用，待确认\"]}, \"upfront_budget_status\": \"unknown\"}, {\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"前海或福田\": \"met\", \"工作日9:00—18:00可用\": \"unknown\", \"每月1小时客户会议可用\": \"unknown\"}, \"id\": \"regus-futian-shidai-day-pass\", \"known_monthly\": 3920, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"no deposit cost supplied\"], \"recurring\": [], \"upfront\": [\"前期必要费用，待确认\"]}, \"upfront_budget_status\": \"unknown\"}, {\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"前海或福田\": \"met\", \"工作日9:00—18:00可用\": \"unknown\", \"每月1小时客户会议可用\": \"unknown\"}, \"id\": \"regus-futian-neo-day-pass\", \"known_monthly\": 4510, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"over\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"no deposit cost supplied\"], \"recurring\": [], \"upfront\": [\"前期必要费用，待确认\"]}, \"upfront_budget_status\": \"unknown\"}], \"currency\": \"CNY\"}\n",
+      "scope": "isolated_local_candidate_v1.0.0"
+    },
+    {
+      "test": "skills-remote-discovery-first",
+      "command": "DISABLE_TELEMETRY=1 DO_NOT_TRACK=1 npx skills@1.7.2 add Nick-Zheng-Q/workspace-scout --skill workspace-scout --list",
+      "exit_code": 1,
+      "scope": "existing_public_main_before_v1.0.0",
+      "output": "Git HTTPS clone failed: Error in the HTTP2 framing layer."
+    },
+    {
+      "command": "GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.version GIT_CONFIG_VALUE_0=HTTP/1.1 DISABLE_TELEMETRY=1 DO_NOT_TRACK=1 npm exec --yes --package skills@1.7.2 -- skills add Nick-Zheng-Q/workspace-scout --skill workspace-scout --agent codex claude-code --copy -y --json",
+      "exit_code": 1,
+      "note": "Public pre-release main; telemetry disabled. This is not v1.0.0 verification.",
+      "output": "[\n  {\n    \"status\": \"failed\",\n    \"error\": \"Failed to clone repository\\nFailed to clone https://github.com/Nick-Zheng-Q/workspace-scout.git: Cloning into '/tmp/skills-ERkVXV'...\\nfatal: unable to access 'https://github.com/Nick-Zheng-Q/workspace-scout.git/': Failed to connect to github.com port 443 after 75412 ms: Couldn't connect to server\\n\"\n  }\n]\n\n┌   skills \n│\n│  Tip: use the --yes (-y) and --global (-g) flags to install without prompts.\n│\n■  Failed to clone repository\n│\n│  Failed to clone https://github.com/Nick-Zheng-Q/workspace-scout.git: Cloning into '/tmp/skills-ERkVXV'...\n│\n│  fatal: unable to access 'https://github.com/Nick-Zheng-Q/workspace-scout.git/': Failed to connect to github.com port 443 after 75412 ms: Couldn't connect to server\n│\n│\n│\n└  Installation failed\n\nFailed to clone repository\nFailed to clone https://github.com/Nick-Zheng-Q/workspace-scout.git: Cloning into '/tmp/skills-ERkVXV'...\nfatal: unable to access 'https://github.com/Nick-Zheng-Q/workspace-scout.git/': Failed to connect to github.com port 443 after 75412 ms: Couldn't connect to server\n\nnpm notice\nnpm notice New major version of npm available! 11.19.1 -> 12.2.0\nnpm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0\nnpm notice To update run: npm install -g npm@12.2.0\nnpm notice\n"
+    },
+    {
+      "command": "GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.version GIT_CONFIG_VALUE_0=HTTP/1.1 DISABLE_TELEMETRY=1 DO_NOT_TRACK=1 npm exec --yes --package skills@1.7.2 -- skills add Nick-Zheng-Q/workspace-scout --skill workspace-scout --agent codex claude-code --copy -y --json",
+      "exit_code": 0,
+      "note": "Public pre-release main; telemetry disabled. This is not v1.0.0 verification.",
+      "output": "[\n  {\n    \"name\": \"workspace-scout\",\n    \"status\": \"installed\",\n    \"source\": \"Nick-Zheng-Q/workspace-scout\",\n    \"ref\": null,\n    \"hash\": \"1ea8928c8a9be2274a964ee089e8859bdcce3403084978934c8aa788f23dc2b4\",\n    \"path\": \"<TEMP>/.agents/skills/workspace-scout\",\n    \"scope\": \"project\",\n    \"agents\": [\n      \"Codex\",\n      \"Claude Code\"\n    ],\n    \"mode\": \"copy\",\n    \"security\": null\n  }\n]\n\n│\n●   codex  Agent detected — installing non-interactively\n│\n●  Selected 1 skill: workspace-scout\n\n│\n◇  Installation Summary ─────────────╮\n│                                    │\n│  ./.agents/skills/workspace-scout  │\n│    copy → Codex, Claude Code       │\n│                                    │\n├────────────────────────────────────╯\n\n"
+    },
+    {
+      "test": "skills-public-detail-page",
+      "command": "curl --fail --max-time 30 -L https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout -o <PRIVATE_RESEARCH_FILE>",
+      "exit_code": 0,
+      "http_status": 200,
+      "url": "https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout",
+      "output": "Body displays 404 / workspace-scout is not available. Not listed at this check."
+    },
+    {
+      "test": "initial-claude-marketplace-strict",
+      "command": "claude plugin validate --strict .",
+      "exit_code": 1,
+      "output": "Initial catalog-description warning; fixed by adding metadata.description. Final strict validation is exit 0."
+    },
+    {
+      "test": "unit-tests",
+      "command": "python3 -m unittest discover -s tests -p test_*.py",
+      "exit_code": 0,
+      "output": "96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db  workspace-scout-claude-v1.0.0.zip\nfc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364  workspace-scout-openai-v1.0.0.zip\n4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7  workspace-scout-skill-v1.0.0.zip\n96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db  workspace-scout-claude-v1.0.0.zip\nfc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364  workspace-scout-openai-v1.0.0.zip\n4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7  workspace-scout-skill-v1.0.0.zip\n...............\n----------------------------------------------------------------------\nRan 15 tests in 0.164s\n\nOK\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "installer-regressions",
+      "command": "sh tests/test_install.sh",
+      "exit_code": 0,
+      "output": "Installer tests passed\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "skill-format",
+      "command": "<VALIDATOR_PYTHON> <HOST_SKILL_CREATOR>/scripts/quick_validate.py .",
+      "exit_code": 0,
+      "output": "Skill is valid!\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-plugin-strict",
+      "command": "claude plugin validate --strict plugins/workspace-scout",
+      "exit_code": 0,
+      "output": "Validating plugin manifest: <REPO>/plugins/workspace-scout/.claude-plugin/plugin.json\n\n✔ Validation passed\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-catalog-strict",
+      "command": "claude plugin validate --strict .",
+      "exit_code": 0,
+      "output": "Validating marketplace manifest: <REPO>/.claude-plugin/marketplace.json\n\n✔ Validation passed\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "git-whitespace",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": "",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "deterministic-release-build",
+      "command": "python3 scripts/build_release.py",
+      "exit_code": 0,
+      "output": "96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db  workspace-scout-claude-v1.0.0.zip\n68e6a066f49d46bc9e670d16836bfa2fde41189f920107ff5a82297766c595c6  workspace-scout-media-v1.0.0.zip\nfc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364  workspace-scout-openai-v1.0.0.zip\n4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7  workspace-scout-skill-v1.0.0.zip\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "skill-zip-helper",
+      "command": "python3 <UNPACKED_SKILL_SKILL>/scripts/check_candidates.py release/v1.0.0/demos/singapore.input.json",
+      "exit_code": 0,
+      "output": "{\"candidates\": [{\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"availability on requested dates\": \"unknown\", \"private call suitability\": \"unknown\", \"published hours cover weekday 9am to 5pm\": \"met\"}, \"id\": \"hive-lavender-eight-day-passes\", \"known_monthly\": 261.6, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"unconfirmed deposit\"], \"recurring\": [\"unconfirmed other compulsory charges\"], \"upfront\": [\"unconfirmed setup charges\"]}, \"upfront_budget_status\": \"not_set\"}, {\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"availability on requested dates\": \"unknown\", \"private call suitability\": \"unknown\", \"published hours cover weekday 9am to 5pm\": \"met\"}, \"id\": \"hive-lavender-part-time-ten-days\", \"known_monthly\": 299.75, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"unconfirmed deposit\"], \"recurring\": [\"unconfirmed other compulsory charges\"], \"upfront\": [\"unconfirmed setup charges\"]}, \"upfront_budget_status\": \"not_set\"}], \"currency\": \"SGD\"}\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "openai-zip-helper",
+      "command": "python3 <UNPACKED_OPENAI_SKILL>/scripts/check_candidates.py release/v1.0.0/demos/singapore.input.json",
+      "exit_code": 0,
+      "output": "{\"candidates\": [{\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"availability on requested dates\": \"unknown\", \"private call suitability\": \"unknown\", \"published hours cover weekday 9am to 5pm\": \"met\"}, \"id\": \"hive-lavender-eight-day-passes\", \"known_monthly\": 261.6, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"unconfirmed deposit\"], \"recurring\": [\"unconfirmed other compulsory charges\"], \"upfront\": [\"unconfirmed setup charges\"]}, \"upfront_budget_status\": \"not_set\"}, {\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"availability on requested dates\": \"unknown\", \"private call suitability\": \"unknown\", \"published hours cover weekday 9am to 5pm\": \"met\"}, \"id\": \"hive-lavender-part-time-ten-days\", \"known_monthly\": 299.75, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"unconfirmed deposit\"], \"recurring\": [\"unconfirmed other compulsory charges\"], \"upfront\": [\"unconfirmed setup charges\"]}, \"upfront_budget_status\": \"not_set\"}], \"currency\": \"SGD\"}\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "claude-zip-helper",
+      "command": "python3 <UNPACKED_CLAUDE_SKILL>/scripts/check_candidates.py release/v1.0.0/demos/singapore.input.json",
+      "exit_code": 0,
+      "output": "{\"candidates\": [{\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"availability on requested dates\": \"unknown\", \"private call suitability\": \"unknown\", \"published hours cover weekday 9am to 5pm\": \"met\"}, \"id\": \"hive-lavender-eight-day-passes\", \"known_monthly\": 261.6, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"unconfirmed deposit\"], \"recurring\": [\"unconfirmed other compulsory charges\"], \"upfront\": [\"unconfirmed setup charges\"]}, \"upfront_budget_status\": \"not_set\"}, {\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"availability on requested dates\": \"unknown\", \"private call suitability\": \"unknown\", \"published hours cover weekday 9am to 5pm\": \"met\"}, \"id\": \"hive-lavender-part-time-ten-days\", \"known_monthly\": 299.75, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"unconfirmed deposit\"], \"recurring\": [\"unconfirmed other compulsory charges\"], \"upfront\": [\"unconfirmed setup charges\"]}, \"upfront_budget_status\": \"not_set\"}], \"currency\": \"SGD\"}\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "history-secret-scan",
+      "command": ".release-private/tools/gitleaks git . --log-opts=--all --redact --report-format json --report-path .release-private/logs/gitleaks-history.json",
+      "exit_code": 0,
+      "output": "\n    ○\n    │╲\n    │ ○\n    ○ ░\n    ░    gitleaks\n\n11:31PM INF 3 commits scanned.\n11:31PM INF scanned ~258336 bytes (258.34 KB) in 115ms\n11:31PM INF no leaks found\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "public-export-secret-scan",
+      "command": ".release-private/tools/gitleaks dir <ALLOWLISTED_PUBLIC_EXPORT> --redact --report-format json --report-path .release-private/logs/gitleaks-export.json",
+      "exit_code": 0,
+      "output": "\n    ○\n    │╲\n    │ ○\n    ○ ░\n    ░    gitleaks\n\n11:31PM INF scanned ~405364 bytes (405.36 KB) in 23.8ms\n11:31PM INF no leaks found\n",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "release-runtime-markdown-links",
+      "command": "Check local Markdown links in README, runtime references and release/v1.0.0",
+      "exit_code": 0,
+      "output": "All local targets exist; archived evaluation snapshot links excluded intentionally.",
+      "scope": "local_final_release_candidate_v1.0.0"
+    },
+    {
+      "test": "portable-manifest-schema-fields-assets",
+      "command": "<VALIDATOR_PYTHON> <PRIVATE_VALIDATION_SCRIPT> (jsonschema + XML field/path checks against official schema)",
+      "exit_code": 0,
+      "scope": "local_final_release_candidate_v1.0.0",
+      "output": "Portable manifest schema and local OpenAI field/asset checks passed; not portal validation.",
+      "schema_url": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"
+    },
+    {
+      "test": "intermediate-release-document-links",
+      "command": "Check local Markdown links while release documents were being assembled",
+      "exit_code": 1,
+      "output": "Three references to manifest.json/verification.json were initially missing; both files were then created. Final link check passed (exit 0)."
+    },
+    {
+      "test": "github-release-preflight-first",
+      "command": "gh release list --limit 5 --json tagName,url",
+      "exit_code": 1,
+      "output": "CLI list does not support url as a JSON field. Corrected read-only query below; no publication attempted."
+    },
+    {
+      "test": "github-release-preflight-final",
+      "command": "gh release list --limit 5 --json tagName,isDraft,isPrerelease",
+      "exit_code": 0,
+      "output": "[]; no Release exists before approval."
+    },
+    {
+      "test": "final-release-material-secret-scan",
+      "command": ".release-private/tools/gitleaks dir release --redact --report-format json --report-path <PRIVATE_REPORT>",
+      "exit_code": 0,
+      "output": "No secret findings in final release material."
+    }
+  ],
+  "not_attempted": [
+    {
+      "platform": "GitHub v1.0.0 push/tag/Release",
+      "exit_code": null,
+      "status": "awaiting_approval_or_platform_access"
+    },
+    {
+      "platform": "OpenAI public directory submission",
+      "exit_code": null,
+      "status": "awaiting_approval_or_platform_access"
+    },
+    {
+      "platform": "Claude Directory submission",
+      "exit_code": null,
+      "status": "awaiting_approval_or_platform_access"
+    },
+    {
+      "platform": "Awesome PR",
+      "exit_code": null,
+      "status": "awaiting_approval_or_platform_access"
+    },
+    {
+      "platform": "X post",
+      "exit_code": null,
+      "status": "awaiting_approval_or_platform_access"
+    },
+    {
+      "platform": "Reddit post",
+      "exit_code": null,
+      "status": "awaiting_approval_or_platform_access"
+    },
+    {
+      "platform": "Show HN post",
+      "exit_code": null,
+      "status": "awaiting_approval_or_platform_access"
+    },
+    {
+      "platform": "creator outreach",
+      "exit_code": null,
+      "status": "awaiting_approval_or_platform_access"
+    }
+  ]
+}

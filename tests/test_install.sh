@@ -43,6 +43,18 @@ if "$tmp/source/update.sh" --dest-dir "$tmp/other" > /dev/null 2>&1; then
   exit 1
 fi
 
+mkdir -p "$tmp/self/workspace-scout"
+cp -R "$tmp/source/." "$tmp/self/workspace-scout/"
+if "$tmp/self/workspace-scout/update.sh" --dest-dir "$tmp/self" > /dev/null 2>&1; then
+  echo "Update should refuse to replace the source checkout" >&2
+  exit 1
+fi
+[ -f "$tmp/self/workspace-scout/install.sh" ]
+if "$tmp/source/install.sh" --dest-dir "$tmp/source/references/nested" > /dev/null 2>&1; then
+  echo "Install should refuse a recursively copied destination" >&2
+  exit 1
+fi
+
 "$tmp/source/install.sh" --project > /dev/null
 [ -f "$tmp/source/.agents/skills/workspace-scout/SKILL.md" ]
 "$tmp/source/update.sh" --project > /dev/null

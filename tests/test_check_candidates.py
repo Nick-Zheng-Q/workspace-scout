@@ -9,6 +9,27 @@ SPEC.loader.exec_module(module)
 
 
 class CheckCandidatesTests(unittest.TestCase):
+    def test_non_object_input_rejected(self):
+        for data in ([], "input", None, 1):
+            with self.subTest(data=data), self.assertRaises(ValueError):
+                module.summarize(data)
+
+    def test_overflowing_cost_rejected(self):
+        for costs in ([{"name": "rent", "kind": "recurring", "amount": 1e308, "quantity": 2}],
+                      [{"name": "setup", "kind": "upfront", "amount": 1e308},
+                       {"name": "deposit", "kind": "deposit", "amount": 1e308}]):
+            with self.subTest(costs=costs), self.assertRaises(ValueError):
+                module.summarize({"candidates": [{"id": "overflow", "costs": costs}]})
+
+    def test_malformed_field_types_and_huge_integer_rejected(self):
+        for data in (
+            {"hard_requirements": ["hours"], "candidates": [{"id": "desk", "conditions": {"hours": []}}]},
+            {"candidates": [{"id": "desk", "costs": [{"name": "rent", "kind": [], "amount": 1}]}]},
+            {"candidates": [{"id": "desk", "costs": [{"name": "rent", "kind": "recurring", "amount": 10 ** 1000}]}]},
+        ):
+            with self.subTest(data=data), self.assertRaises(ValueError):
+                module.summarize(data)
+
     def test_unknown_required_fee_does_not_become_within_budget(self):
         data = {"hard_requirements": ["weekend"], "budgets": {"monthly_max": 3000}, "candidates": [{
             "id": "desk", "conditions": {"weekend": "met"}, "costs": [

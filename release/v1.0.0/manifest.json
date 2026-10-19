@@ -1,0 +1,26 @@
+{
+  "version": "1.0.0",
+  "prepared_at": "2026-10-19",
+  "publication_status": "awaiting_consolidated_approval",
+  "existing_public_head": "d672d047fd457dfe1601fa1875a9f0a4601da758",
+  "runtime_sha256": {
+    "SKILL.md": "882330eb2558a4ae109367e219877b5edd78fe637d88e91140c292d47f311933",
+    "LICENSE": "ab7c441ade2947e9184b88cf8e0b8f7903eacbc151f3b37533cf3e6a35f44504",
+    "references/candidate-record.md": "167ef0cb04c2951759a285631bcb1e89d78c5f744a14325625c1b7d7686529b7",
+    "references/check-input.md": "2ae678dfc2a9b200a0d0de95be7758274f5e9816f26601833f019e02dbe35612",
+    "references/search-guide.md": "a436d8ae75f34bb2e692db753130e0681d1e70e758560ff9da27e162d0708ca0",
+    "scripts/check_candidates.py": "a1d41a964437259eba5e7bbd17ef408caa30b7e04f8455967671a3cd2a67625f"
+  },
+  "release_asset_sha256": {
+    "workspace-scout-claude-v1.0.0.zip": "96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db",
+    "workspace-scout-media-v1.0.0.zip": "68e6a066f49d46bc9e670d16836bfa2fde41189f920107ff5a82297766c595c6",
+    "workspace-scout-openai-v1.0.0.zip": "fc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364",
+    "workspace-scout-skill-v1.0.0.zip": "4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7"
+  },
+  "excluded": [
+    ".release-private/",
+    "dist/ from Git (approved ZIPs uploaded separately)",
+    "local host account/config/cache data"
+  ],
+  "scope_note": "Asset checksums cover prepared packages, not a created Release. No new public submission yet."
+}

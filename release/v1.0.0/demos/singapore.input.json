@@ -1,0 +1,86 @@
+{
+  "currency": "SGD",
+  "hard_requirements": [
+    "published hours cover weekday 9am to 5pm",
+    "private call suitability",
+    "availability on requested dates"
+  ],
+  "budgets": {
+    "monthly_max": 300
+  },
+  "candidates": [
+    {
+      "id": "hive-lavender-eight-day-passes",
+      "conditions": {
+        "private call suitability": "unknown",
+        "published hours cover weekday 9am to 5pm": "met",
+        "availability on requested dates": "unknown"
+      },
+      "required_costs_complete": false,
+      "costs": [
+        {
+          "name": "eight SGD30 day passes",
+          "kind": "recurring",
+          "amount": 30,
+          "quantity": 8
+        },
+        {
+          "name": "9 percent GST scenario on day passes",
+          "kind": "recurring",
+          "amount": 21.6
+        },
+        {
+          "name": "unconfirmed other compulsory charges",
+          "kind": "recurring",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed setup charges",
+          "kind": "upfront",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed deposit",
+          "kind": "deposit",
+          "amount": null
+        }
+      ]
+    },
+    {
+      "id": "hive-lavender-part-time-ten-days",
+      "conditions": {
+        "private call suitability": "unknown",
+        "published hours cover weekday 9am to 5pm": "met",
+        "availability on requested dates": "unknown"
+      },
+      "required_costs_complete": false,
+      "costs": [
+        {
+          "name": "part-time ten-day monthly plan",
+          "kind": "recurring",
+          "amount": 275
+        },
+        {
+          "name": "9 percent GST scenario on membership",
+          "kind": "recurring",
+          "amount": 24.75
+        },
+        {
+          "name": "unconfirmed other compulsory charges",
+          "kind": "recurring",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed setup charges",
+          "kind": "upfront",
+          "amount": null
+        },
+        {
+          "name": "unconfirmed deposit",
+          "kind": "deposit",
+          "amount": null
+        }
+      ]
+    }
+  ]
+}

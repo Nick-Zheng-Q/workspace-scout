@@ -1,0 +1,61 @@
+{
+  "candidates": [
+    {
+      "hard_condition_gate": "verify",
+      "hard_conditions": {
+        "availability on requested dates": "unknown",
+        "four private one-hour calls": "unknown",
+        "published usage permits six desk weekdays": "met"
+      },
+      "id": "ecto-single-days-and-separate-rooms",
+      "known_monthly": 340,
+      "known_refundable_deposit": 0,
+      "known_upfront_nonrefundable": 0,
+      "known_upfront_plus_deposit_excluding_first_month": 0,
+      "monthly_budget_status": "unknown",
+      "required_costs_complete": false,
+      "unknown_required_costs": {
+        "deposit": [
+          "unconfirmed deposit"
+        ],
+        "recurring": [
+          "applicable tax not yet confirmed",
+          "unconfirmed other compulsory charges"
+        ],
+        "upfront": [
+          "unconfirmed setup charges"
+        ]
+      },
+      "upfront_budget_status": "not_set"
+    },
+    {
+      "hard_condition_gate": "verify",
+      "hard_conditions": {
+        "availability on requested dates": "unknown",
+        "four private one-hour calls": "unknown",
+        "published usage permits six desk weekdays": "met"
+      },
+      "id": "ecto-flexible-monthly",
+      "known_monthly": 200,
+      "known_refundable_deposit": 0,
+      "known_upfront_nonrefundable": 0,
+      "known_upfront_plus_deposit_excluding_first_month": 0,
+      "monthly_budget_status": "unknown",
+      "required_costs_complete": false,
+      "unknown_required_costs": {
+        "deposit": [
+          "unconfirmed deposit"
+        ],
+        "recurring": [
+          "applicable tax not yet confirmed",
+          "unconfirmed other compulsory charges"
+        ],
+        "upfront": [
+          "unconfirmed setup charges"
+        ]
+      },
+      "upfront_budget_status": "not_set"
+    }
+  ],
+  "currency": "CAD"
+}

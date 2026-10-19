@@ -1,0 +1,59 @@
+{
+  "candidates": [
+    {
+      "hard_condition_gate": "verify",
+      "hard_conditions": {
+        "availability on requested dates": "unknown",
+        "private call suitability": "unknown",
+        "published hours cover weekday 9am to 5pm": "met"
+      },
+      "id": "hive-lavender-eight-day-passes",
+      "known_monthly": 261.6,
+      "known_refundable_deposit": 0,
+      "known_upfront_nonrefundable": 0,
+      "known_upfront_plus_deposit_excluding_first_month": 0,
+      "monthly_budget_status": "unknown",
+      "required_costs_complete": false,
+      "unknown_required_costs": {
+        "deposit": [
+          "unconfirmed deposit"
+        ],
+        "recurring": [
+          "unconfirmed other compulsory charges"
+        ],
+        "upfront": [
+          "unconfirmed setup charges"
+        ]
+      },
+      "upfront_budget_status": "not_set"
+    },
+    {
+      "hard_condition_gate": "verify",
+      "hard_conditions": {
+        "availability on requested dates": "unknown",
+        "private call suitability": "unknown",
+        "published hours cover weekday 9am to 5pm": "met"
+      },
+      "id": "hive-lavender-part-time-ten-days",
+      "known_monthly": 299.75,
+      "known_refundable_deposit": 0,
+      "known_upfront_nonrefundable": 0,
+      "known_upfront_plus_deposit_excluding_first_month": 0,
+      "monthly_budget_status": "unknown",
+      "required_costs_complete": false,
+      "unknown_required_costs": {
+        "deposit": [
+          "unconfirmed deposit"
+        ],
+        "recurring": [
+          "unconfirmed other compulsory charges"
+        ],
+        "upfront": [
+          "unconfirmed setup charges"
+        ]
+      },
+      "upfront_budget_status": "not_set"
+    }
+  ],
+  "currency": "SGD"
+}

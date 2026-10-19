@@ -1,0 +1,21 @@
+{
+  "name": "workspace-scout",
+  "version": "1.0.0",
+  "description": "Discover specific workspace plans for solo founders and small teams. Compare practical fit, admission requirements, full costs, conditional support and exit terms, with dated evidence and questions to ask next.",
+  "author": {
+    "name": "Nick-Zheng-Q",
+    "url": "https://github.com/Nick-Zheng-Q"
+  },
+  "homepage": "https://github.com/Nick-Zheng-Q/workspace-scout",
+  "repository": "https://github.com/Nick-Zheng-Q/workspace-scout",
+  "license": "PolyForm-Shield-1.0.0",
+  "keywords": [
+    "workspace",
+    "coworking",
+    "office",
+    "solo-founder",
+    "small-business",
+    "incubator",
+    "location-research"
+  ]
+}

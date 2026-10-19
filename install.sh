@@ -42,6 +42,14 @@ grep -qx 'name: workspace-scout' "$source_dir/SKILL.md" || {
 mkdir -p "$dest_dir"
 dest_dir=$(CDPATH= cd -- "$dest_dir" && pwd -P)
 target=$dest_dir/workspace-scout
+# Updating the checkout itself would remove its Git history and source files.
+case "$source_dir/" in
+  "$target/"*) echo "Refusing to replace the source checkout or an ancestor" >&2; exit 1 ;;
+esac
+# Staging inside references would make the recursive copy copy itself.
+case "$dest_dir/" in
+  "$source_dir/references/"*) echo "Destination must not be inside source references" >&2; exit 1 ;;
+esac
 if [ -L "$target" ]; then
   echo "Refusing to replace symlink: $target" >&2
   exit 1

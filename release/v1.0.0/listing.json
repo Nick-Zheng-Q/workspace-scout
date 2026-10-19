@@ -1,0 +1,11 @@
+{
+  "name": "workspace-scout",
+  "display_name": "Workspace Scout",
+  "version": "1.0.0",
+  "category": "Productivity",
+  "short_description": "Find and check workspaces",
+  "description": "Discover specific workspace plans for solo founders and small teams. Compare practical fit, admission requirements, full costs, conditional support and exit terms, with dated evidence and questions to ask next.",
+  "keywords": ["workspace", "coworking", "office", "solo-founder", "small-business", "incubator", "location-research"],
+  "default_prompt": "Find workspace plans for my business; check practical fit, entry requirements, costs and what to verify next.",
+  "disclosure": "A Dayweaver project. Reports include one optional, disclosed Dayweaver note unless declined. Source-available under PolyForm Shield 1.0.0; not OSI open source. No booking, application, messaging, MCP server or automatic monitoring."
+}
