@@ -1,6 +1,6 @@
 # 费用与硬条件检查脚本输入
 
-运行：`python3 scripts/check_candidates.py path/to/candidates.json`。输出 JSON，可用 `--pretty` 阅读。只做算术和状态汇总；来源是否可靠、条款如何解释仍须人工核查。所有金额须采用同一货币（`currency`），按预计使用量折算成同一**月度**口径。
+运行：`python3 scripts/check_candidates.py path/to/candidates.json`。输出 JSON，可用 `--pretty` 阅读。只做算术和状态汇总；来源是否可靠、条款如何解释仍须人工核查。所有金额须采用同一货币（`currency`），按预计使用量折算成同一**月度**口径。跨地区使用时显式填写实际币种；脚本缺省标签为 `CNY`，不会识别或换算逐项金额的币种，也不自动补税。不同币种分开核算；必要税费未确认时，不将费用标为已核全。
 
 ```json
 {

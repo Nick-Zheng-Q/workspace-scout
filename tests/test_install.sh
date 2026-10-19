@@ -16,6 +16,9 @@ mkdir "$tmp/dest"
 [ -f "$tmp/dest/workspace-scout/LICENSE" ]
 grep -q 'PolyForm Shield License 1.0.0' "$tmp/dest/workspace-scout/LICENSE"
 [ -f "$tmp/dest/workspace-scout/references/search-guide.md" ]
+for file in LICENSE references/search-guide.md references/candidate-record.md; do
+  cmp "$tmp/source/$file" "$tmp/dest/workspace-scout/$file"
+done
 [ -f "$tmp/dest/workspace-scout/scripts/check_candidates.py" ]
 [ ! -f "$tmp/dest/workspace-scout/scripts/install.sh" ]
 if "$tmp/source/install.sh" --dest-dir "$tmp/dest" > /dev/null 2>&1; then
@@ -25,7 +28,7 @@ fi
 
 printf '\nTEST_UPDATE_MARKER\n' >> "$tmp/source/references/search-guide.md"
 "$tmp/source/update.sh" --dest-dir "$tmp/dest" > "$tmp/update.out"
-grep -q TEST_UPDATE_MARKER "$tmp/dest/workspace-scout/references/search-guide.md"
+cmp "$tmp/source/references/search-guide.md" "$tmp/dest/workspace-scout/references/search-guide.md"
 backup=$(find "$tmp/workspace-scout-backups" -mindepth 1 -maxdepth 1 -type d | head -1)
 [ -n "$backup" ]
 if grep -q TEST_UPDATE_MARKER "$backup/references/search-guide.md"; then

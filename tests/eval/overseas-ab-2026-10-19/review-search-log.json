@@ -1,0 +1,254 @@
+{
+  "review_date": "2026-10-19",
+  "scope": "Blind review of request.txt, criteria.md, answer-a.md and answer-b.md in the assigned blind-review directory only. No condition attribution attempted.",
+  "research_budget": {
+    "search_query_limit": 8,
+    "page_open_click_limit": 16,
+    "search_queries_used": 3,
+    "page_opens_used": 13,
+    "clicks_used": 0,
+    "find_actions_used": 4
+  },
+  "research_calls": [
+    {
+      "sequence": 1,
+      "tool": "web.run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://ecto.coop/nos-bureaux/"
+          },
+          {
+            "ref_id": "https://ecto.coop/tous-les-tarifs/"
+          },
+          {
+            "ref_id": "https://ecto.coop/location-de-salles/"
+          },
+          {
+            "ref_id": "https://www.district3.co/about"
+          }
+        ],
+        "response_length": "long"
+      }
+    },
+    {
+      "sequence": 2,
+      "tool": "web.run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://www.district3.co/programs"
+          },
+          {
+            "ref_id": "https://www.district3.co/"
+          },
+          {
+            "ref_id": "https://www.district3.co/contact"
+          },
+          {
+            "ref_id": "https://anticafe.team/"
+          },
+          {
+            "ref_id": "https://anticafe.team/reservation"
+          }
+        ],
+        "response_length": "long"
+      }
+    },
+    {
+      "sequence": 3,
+      "tool": "web.run",
+      "arguments": {
+        "find": [
+          {
+            "ref_id": "https://www.district3.co/about",
+            "pattern": "workspace"
+          },
+          {
+            "ref_id": "https://www.district3.co/about",
+            "pattern": "first"
+          },
+          {
+            "ref_id": "https://www.district3.co/contact",
+            "pattern": "info@"
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://montrealcowork.com/"
+          },
+          {
+            "ref_id": "https://montreal.ca/sujets/salles-de-travail-en-bibliotheque"
+          },
+          {
+            "ref_id": "https://www.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/perception-de-la-tps-et-de-la-tvq/calcul-des-taxes/"
+          }
+        ],
+        "response_length": "long"
+      }
+    },
+    {
+      "sequence": 4,
+      "tool": "web.run",
+      "arguments": {
+        "search_query": [
+          {
+            "q": "site:anticafe.team \"21.85\""
+          },
+          {
+            "q": "site:anticafe.team/reservation \"$10\""
+          },
+          {
+            "q": "site:montrealcowork.com \"275\" \"25\""
+          }
+        ],
+        "find": [
+          {
+            "ref_id": "https://www.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/perception-de-la-tps-et-de-la-tvq/calcul-des-taxes/",
+            "pattern": "9,975"
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://nuage-b.com/en/lp-flexible-affordable-hot-desk-space-in-montreal/"
+          }
+        ],
+        "response_length": "long"
+      }
+    }
+  ],
+  "observations": [
+    {
+      "call": 1,
+      "url": "https://ecto.coop/nos-bureaux/",
+      "access_status": "Readable official page; crawled four days ago",
+      "observation": "Confirms CAD 200/month flex, six-month commitment, 20% shorter-term surcharge, weekday floating desk and four monthly meeting hours; both answers accurately report these."
+    },
+    {
+      "call": 1,
+      "url": "https://ecto.coop/tous-les-tarifs/",
+      "access_status": "Readable official page; crawled today",
+      "observation": "All prices before taxes. Lists lifetime membership CAD 350: CAD 100 ordinary and CAD 250 preferred shares. Mandatory status, timing and refundability not resolved. B reports amount; A gives only generic fees warning. Also confirms CAD 30 day pass, CAD 250 ten-pass pack and CAD 40 weekday room hour."
+    },
+    {
+      "call": 1,
+      "url": "https://ecto.coop/location-de-salles/",
+      "access_status": "Readable official page; crawled four days ago",
+      "observation": "Three rooms, smallest 4–6 people; available to members and visitors; weekday hourly CAD 40. Availability/reservation entrances present. Does not establish sound isolation or individual booking-credit rules."
+    },
+    {
+      "call": 1,
+      "url": "https://www.district3.co/about",
+      "access_status": "Readable official page; initial excerpt incomplete, relevant text located in call 3",
+      "observation": "See call 3."
+    },
+    {
+      "call": 2,
+      "url": "https://www.district3.co/programs",
+      "access_status": "Readable official page; crawled today",
+      "observation": "Supports B's no-university-affiliation statement, Quebec-resident condition, panel decision in 2–3 weeks, Validation workload, and two-cofounder Launch & Grow rule. Does not confirm standalone free coworking for this consultant."
+    },
+    {
+      "call": 2,
+      "url": "https://www.district3.co/",
+      "access_status": "Readable official page; crawled today",
+      "observation": "Advertises free startup services with no equity and workspace access, supporting a conditional low-cost enquiry, not an unconditional free room entitlement."
+    },
+    {
+      "call": 2,
+      "url": "https://www.district3.co/contact",
+      "access_status": "Readable official page; relevant contact located in call 3",
+      "observation": "See call 3."
+    },
+    {
+      "call": 2,
+      "url": "https://anticafe.team/",
+      "access_status": "Official page returned title but zero readable body lines",
+      "observation": "Cannot verify current terms directly. Search-index evidence obtained in call 4; this access result does not establish fabrication by either answer."
+    },
+    {
+      "call": 2,
+      "url": "https://anticafe.team/reservation",
+      "access_status": "Official page returned title but zero readable body lines",
+      "observation": "Cannot verify current terms directly. Search-index evidence obtained in call 4."
+    },
+    {
+      "call": 3,
+      "url": "https://montrealcowork.com/",
+      "access_status": "Fetch timeout (tool reported 400)",
+      "observation": "No readable direct page; official-domain indexed pricing obtained in call 4."
+    },
+    {
+      "call": 3,
+      "url": "https://montreal.ca/sujets/salles-de-travail-en-bibliotheque",
+      "access_status": "Readable official municipal page; updated 2024-03-05",
+      "observation": "Confirms free individual/group workrooms booked in advance with a library card. Does not confirm a suitable branch, client-call permission, privacy or personal eligibility."
+    },
+    {
+      "call": 3,
+      "url": "https://www.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/perception-de-la-tps-et-de-la-tvq/calcul-des-taxes/",
+      "access_status": "Readable official page; relevant rates located in call 4",
+      "observation": "See call 4."
+    },
+    {
+      "call": 3,
+      "url": "https://www.district3.co/about",
+      "access_status": "Find results readable",
+      "observation": "Confirms downtown first-come workstations, weekdays 09:00–17:00, and bookable hybrid-meeting conference rooms. Does not establish access eligibility, quotas, privacy or charges."
+    },
+    {
+      "call": 3,
+      "url": "https://www.district3.co/contact",
+      "access_status": "Find result readable",
+      "observation": "Verifies info@district3.co. Its separate research-consultation booking link has Concordia restrictions; B directs the user to general email rather than assuming access to that restricted service."
+    },
+    {
+      "call": 4,
+      "url": "https://anticafe.team/",
+      "access_status": "Official-domain search index readable; reported crawl two months ago",
+      "observation": "Supports CAD 21.85 daily maximum, address and 10:00–22:00 daily hours. Current tax treatment and desk availability remain unknown."
+    },
+    {
+      "call": 4,
+      "url": "https://anticafe.team/reservation",
+      "access_status": "Official-domain search index readable; reported crawl two months ago",
+      "observation": "Supports CAD 10 reservation fee and exclusive group room description. Solo use, one-hour entitlement, full charges and sound privacy remain unresolved. B correctly makes its calculation conditional; A uses separately priced ECTO rooms instead."
+    },
+    {
+      "call": 4,
+      "url": "https://montrealcowork.com/",
+      "access_status": "Official-domain search index readable; reported crawl last week",
+      "observation": "Supports open desks from CAD 275/month plus tax and meeting rooms from CAD 25/hour plus tax at 4388 Saint-Denis. Included room credits remain unestablished."
+    },
+    {
+      "call": 4,
+      "url": "https://nuage-b.com/en/lp-flexible-affordable-hot-desk-space-in-montreal/",
+      "access_status": "Readable official promotional page",
+      "observation": "Confirms CAD 150 promotion expired March 20, 2025. A correctly does not rely on it. Location assertion not independently checked."
+    },
+    {
+      "call": 4,
+      "url": "https://www.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/perception-de-la-tps-et-de-la-tvq/calcul-des-taxes/",
+      "access_status": "Find result readable",
+      "observation": "Confirms GST 5% and QST 9.975% on the same pretax price; supports both answers' 1.14975 multiplier."
+    }
+  ],
+  "local_arithmetic_check": {
+    "tax_multiplier": 1.14975,
+    "pretax_ceiling": 304.41400304414003,
+    "ecto_six_month": 229.95000000000002,
+    "ecto_shorter": 275.94,
+    "a_anticafe_plus_ecto": 334.69222500000006,
+    "b_anticafe_conditional": 196.72222500000004,
+    "cowork_no_included_rooms": 431.15625,
+    "ecto_six_day_passes_plus_rooms": 390.915,
+    "ecto_amortized_pack_plus_rooms": 356.4225,
+    "result": "Quoted monetary arithmetic agrees to cents; assumptions and unknown mandatory charges are the decisive issue."
+  },
+  "limitations": [
+    "No original execution/query logs were supplied in the assigned directory; search coverage and original fetch access cannot be audited from prose alone.",
+    "Not an exhaustive market survey; only answer-linked primary sources and targeted official-domain index searches checked.",
+    "No provider contacted, form submitted or purchase made. Acoustic privacy, availability, actual admission and final quotes remain untested.",
+    "A fetch failure or changed accessibility is not proof that a page or claim was fabricated."
+  ]
+}

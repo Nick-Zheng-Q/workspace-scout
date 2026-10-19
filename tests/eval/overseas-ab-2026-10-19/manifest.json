@@ -1,0 +1,52 @@
+{
+  "case": "Montréal A",
+  "client_date": "2026-10-19",
+  "skill_run": "run-q",
+  "baseline_run": "run-p",
+  "request": "I am a solo software consultant comparing Plateau-Mont-Royal and downtown Montréal. I need a desk six weekdays per month and a private room for four one-hour client calls; no storage or address service. Budget CAD 350 per month including mandatory charges. I have a Canadian company and no university affiliation. Find a few specific plans worth contacting, including any credible low-cost alternatives. Please answer in English. Do not contact anyone or submit anything.",
+  "search_queries_max": 12,
+  "page_open_or_click_max": 16,
+  "execution": "fresh subagents, fork_turns=none, inherited same model and reasoning settings",
+  "starting_commit": "34010ad",
+  "skill_sha256": {
+    "LICENSE": "ab7c441ade2947e9184b88cf8e0b8f7903eacbc151f3b37533cf3e6a35f44504",
+    "SKILL.md": "a1e8337809349bf37e357e5454c76d268e585b993dca405a3989179f99deb8e5",
+    "references/search-guide.md": "a436d8ae75f34bb2e692db753130e0681d1e70e758560ff9da27e162d0708ca0",
+    "references/check-input.md": "2ae678dfc2a9b200a0d0de95be7758274f5e9816f26601833f019e02dbe35612",
+    "references/candidate-record.md": "381d8ef086178a5fe3213173d6b354f8262f7f73fd93d2ecb2b050505bbcf8b5",
+    "scripts/check_candidates.py": "0c9d378480b31a33d4e4d9b395f8b69eb842a0c68c1aaf05a7045199fcc014ba"
+  },
+  "condition_mapping": {
+    "Answer A": "run-p",
+    "Answer B": "run-q"
+  },
+  "review_verdict": "Answer B better, narrowly",
+  "exact_model_name": "Not returned by the subagent tool; both execution agents inherited the same parent model and reasoning settings without overrides.",
+  "execution_find_counts": {
+    "baseline": 0,
+    "with_skill": 19
+  },
+  "find_budget": "Not capped, available equally to both runs; additional reading cost is a comparison limitation.",
+  "raw_output_sha256": {
+    "baseline": "4e390eec1e1c522390d5179d8f3d672c8ab56cc25ede85c2c789740a5e2edc16",
+    "with_skill": "467d27a046b0ab917fb2cbf3cbe80d84344347ab57d8586581eb5f9ced510d1b"
+  },
+  "raw_log_sha256": {
+    "baseline-search-log.json": "fd7c12b8cb967066901a3d17bad566077ee801ea5356f7f901080a02b751a71d",
+    "with-skill-search-log.json": "73715cea3ab9be01e0d7730760c7839578f143bd7d953cdfaa853997d4d5b037"
+  },
+  "log_export": "Actual query arguments preserved. Local paths redacted; tool-local source IDs resolved to URLs where the original log recorded a mapping, otherwise marked unresolved. Exports are self-recorded execution audits, not complete server-side transcripts. Raw originals remain in the local temporary experiment directory.",
+  "setup_audit_note": "Skill/reference setup reads omitted from initial execution log; evaluator provided a factual addendum after the run. Original answer and log were not revised.",
+  "method_limits": [
+    "One case and one run per condition, live web not deterministic.",
+    "Full revised Skill versus no Skill; cannot isolate effects of search-guide changes from core Skill/template instructions.",
+    "Reviewer did not receive condition mapping or execution logs, but answer styles could allow guessing.",
+    "No complete affordable fit or applicant-specific approval was established in either answer.",
+    "No costs of unused search budget assumed equal: both used ceilings, with extra find operations on the Skill side."
+  ],
+  "answer_export": "Only trailing empty EOF lines normalized for repository whitespace checks; no answer content changed. Raw output hashes refer to unchanged originals retained locally.",
+  "exported_output_sha256": {
+    "baseline": "5e9605ff14a2d377c77f4d4f379f4c1550d3a7bf193922fd80f298bb10759c9c",
+    "with_skill": "b740cad41aeb6a8bfc079e83daf0ce62db80f5167e222106627f30ade7262f33"
+  }
+}

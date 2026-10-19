@@ -14,6 +14,8 @@ Workspace Scout is a Codex Skill for solo founders and small teams looking for a
 - Quiet work, meetings, visitors, filming, recording, equipment storage, hours of access, and other needs that can change the search.
 - Two starting points: discover options from a user brief, or review spaces and documents the user already has.
 - Separate checks for business fit, admission requirements, full costs, exit terms, and conditional policy benefits.
+- Location-aware discovery: use local names, languages, institutions, and booking or application channels rather than assuming Chinese or English sources cover every market.
+- Record actual search paths and access failures; distinguish an official application link from readable terms or confirmed availability.
 
 It does **not** establish that a restaurant, production workshop, laboratory, or other specialized facility satisfies its industry-specific requirements. It does not submit applications, send personal documents, sign agreements, or contact operators.
 
@@ -62,11 +64,11 @@ sh tests/test_install.sh
 python3 -m unittest discover -s tests -p 'test_*.py'
 ```
 
-Codex's `skill-creator` also provides `quick_validate.py` for Skill structure checks. Evaluation protocols and reports are in [tests/eval](tests/eval). Historical reports use the former name `workspace-select`; their links and quoted prices are test records, **not evidence of current availability**.
+Codex's `skill-creator` also provides `quick_validate.py` for Skill structure checks. Evaluation protocols and reports are in [tests/eval](tests/eval). Historical reports use the former name `workspace-select`; their links and quoted prices are test records, **not evidence of current availability**. The [international search-path check](tests/eval/results-international-search-2026-10-19.md) is separate from the [Montréal with/without-Skill test](tests/eval/results-overseas-ab-2026-10-19.md). In that single pair, the Skill answer improved a specific fee check and followed an additional low-cost access path, while the baseline supplied a useful priced fallback; neither confirmed a complete fit. See the [regression protocol](tests/eval/international-protocol.md) for the method and unrun cases. These results do not establish consistent gains or validated worldwide coverage.
 
 ## Important limits
 
-Search terms should come from the user's actual work and acceptable locations. Neither Qianhai, Futian, nor “OPC” is a default requirement. News articles and third-party listings can reveal leads, but current prices, capacity, included services, application windows, and eligibility need confirmation from the relevant publisher or operator. Unapproved subsidies and conditional discounts must not be deducted from baseline costs. Recheck time-sensitive facts before contacting or applying.
+Search terms should come from the user's actual work and acceptable locations. Neither Qianhai, Futian, nor “OPC” is a default requirement. Outside China, follow the local publishing and application channels; do not substitute a fixed list of overseas platforms. Use local-language sources where relevant, and do not equate “affordable” or a fitting-out rent-free period with permanently free workspace. News articles and third-party listings can reveal leads, but current prices, capacity, included services, application windows, and eligibility need confirmation from the relevant publisher or operator. Unapproved subsidies and conditional discounts must not be deducted from baseline costs. Recheck time-sensitive facts before contacting or applying.
 
 ## License
 
@@ -76,9 +78,9 @@ The standard license does not necessarily cover every way someone might direct t
 
 ## 简体中文
 
-**Workspace Scout** 帮助个人创业者和小团队寻找、核查并比较工作空间。候选必须具体到“某个空间＋某种使用或入驻方案”，而不是只推荐园区或片区。它会分别检查业务用途、申请条件、完整费用、退出条款及有前提的政策福利，最终给出值得联系的少数候选。
+**Workspace Scout** 帮助个人创业者和小团队寻找、核查并比较工作空间。候选必须具体到“某个空间＋某种使用或入驻方案”，而不是只推荐园区或片区。它会分别检查业务用途、申请条件、完整费用、退出条款及有前提的政策福利，最终给出值得联系的少数候选。搜索会按当地语言、机构和发布渠道调整，不把公众号或英语设为全球默认；保留真实检索路径与访问失败记录，区分官方入口已找到、条款已读和空余已确认。
 
-**状态：公开测试版。** 安装与脚本测试已通过，但有限的跨城市对照尚未证明它能稳定地比普通 agent 找到更多当前可申请的扶持空间。价格、空余、优惠和资格都须向对应运营方或主管机构复核；本 Skill 不代替专门行业合规审查，也不会自动申请或联系对方。
+**状态：公开测试版。** 安装与脚本测试已通过；新版在一次蒙特利尔有无 Skill 对照中改善了具体收费核查和低价渠道追查，但没有增加已确认完全合适的方案，也不能证明跨城市稳定优于普通 agent。价格、空余、优惠和资格都须向对应运营方或主管机构复核；本 Skill 不代替专门行业合规审查，也不会自动申请或联系对方。
 
 从本仓库运行 `./install.sh`，默认安装到 `~/.agents/skills/workspace-scout`；`./install.sh --project` 只安装到**本仓库**。先更新本地仓库，再运行 `./update.sh`；更新脚本本身不会联网。安装和更新都支持 `--dest-dir /path/to/skills`，更新时应使用与安装时相同的选项。测试命令见上方 [Tests and evidence](#tests-and-evidence)。
 

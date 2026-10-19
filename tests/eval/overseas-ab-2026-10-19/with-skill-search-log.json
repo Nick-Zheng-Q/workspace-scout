@@ -1,0 +1,630 @@
+{
+  "research_date": "2026-10-19",
+  "language": "English answer; French and English queries",
+  "counts": {
+    "search_queries": 12,
+    "page_opens_and_clicks": 16,
+    "find_operations": 19
+  },
+  "budget": {
+    "search_queries": 12,
+    "page_opens_and_clicks": 16
+  },
+  "notes": "Exact executed arguments retained by batch. Each search/open/click item counted separately. Finds inspect already retrieved pages, logged separately. Full copyrighted page text not retained. Search results are discovery evidence unless a body-read source is separately listed. No contact, submissions, accounts, or purchases.",
+  "entries": [
+    {
+      "tool": "exec_command",
+      "arguments": {
+        "cmd": "which stripe && stripe directory --help",
+        "workdir": "<RUN_DIR>",
+        "max_output_tokens": 3000
+      },
+      "access_status": "unavailable",
+      "observation": "Directory CLI prerequisite check failed: stripe executable not installed. No installation or authentication attempted."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://stripe.directory"
+          }
+        ],
+        "search_query": [
+          {
+            "q": "Plateau Mont Royal coworking forfait 5 jours salle réunion tarifs"
+          },
+          {
+            "q": "centre ville Montréal coworking 10 jours mois salle réunion tarif"
+          },
+          {
+            "q": "Montréal espace coworking gratuit entrepreneur bibliothèque salle travail réservation"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "Salles de travail en bibliothèque | Ville de Montréal",
+          "url": "https://montreal.ca/sujets/salles-de-travail-en-bibliotheque",
+          "reference_id": "https://montreal.ca/sujets/salles-de-travail-en-bibliotheque",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Montréal CoWork — Espace de travail tout inclus au Plateau Mont-Royal",
+          "url": "https://montrealcowork.com/",
+          "reference_id": "https://montrealcowork.com/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Location de salle - CQPNL",
+          "url": "https://centrepnl.com/location-de-salle/",
+          "reference_id": "https://centrepnl.com/location-de-salle/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Rent a Dedicated Desk Space in Montreal | Free trial day | Plateau Mont-Royal | ECTO, a cooperative shared workspace",
+          "url": "https://ecto.coop/rent-a-desk/",
+          "reference_id": "https://ecto.coop/rent-a-desk/",
+          "access_status": "search_index_only"
+        }
+      ],
+      "actual_access_failures": [
+        {
+          "url": "https://stripe.directory",
+          "error": "Internal Error"
+        }
+      ],
+      "observation": "French discovery covered Plateau, downtown, and free/public alternatives. Found ECTO, Montréal CoWork, municipal rooms, and university-only examples. stripe.directory returned Internal Error."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/"
+          },
+          {
+            "ref_id": "https://montrealcowork.com/"
+          }
+        ],
+        "search_query": [
+          {
+            "q": "Montréal centre-ville coworking forfait jours salle tarif"
+          },
+          {
+            "q": "Montréal coworking gratuit PME MTL startup espace bureau Canada entreprise"
+          },
+          {
+            "q": "Montréal Anticafé coworking tarif abonnement salle privée"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "Anticafe Montreal - Pay for Time, Not Coffee | Coworking Place-des-Arts",
+          "url": "https://anticafe.team/",
+          "reference_id": "https://anticafe.team/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Résident - Zú",
+          "url": "https://zumtl.com/fr/resident/",
+          "reference_id": "https://zumtl.com/fr/resident/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Bureaux privés au Plateau — Montréal CoWork",
+          "url": "https://montrealcowork.com/bureaux-prives",
+          "reference_id": "https://montrealcowork.com/bureaux-prives",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Rent a Dedicated Desk Space in Montreal | Free trial day | Plateau Mont-Royal | ECTO, a cooperative shared workspace",
+          "url": "https://ecto.coop/rent-a-desk/",
+          "reference_id": "https://ecto.coop/rent-a-desk/",
+          "access_status": "body_read"
+        }
+      ],
+      "actual_access_failures": [
+        {
+          "url": "https://montrealcowork.com/",
+          "error": "Internal Error"
+        }
+      ],
+      "observation": "Discovered AntiCafe Montreal indexed day cap and room reservation; Zú residential plan starts above budget and targets creative/entertainment startups. ECTO English page readable; Montréal CoWork homepage returned Internal Error."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/",
+            "lineno": 45
+          },
+          {
+            "ref_id": "https://anticafe.team/"
+          }
+        ],
+        "search_query": [
+          {
+            "q": "\"coworking\" \"centre-ville\" \"10 jours\" Montréal tarifs -site:2727coworking.com"
+          },
+          {
+            "q": "site:montrealcowork.com postes ouverts tarifs"
+          },
+          {
+            "q": "District 3 Concordia coworking free Canadian incorporated company no affiliation"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "District 3 | Montreal Startup Incubator for Bio, Health, Tech & Social",
+          "url": "https://www.district3.co/",
+          "reference_id": "https://www.district3.co/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "District 3 | Incubateur de startups à Montréal – Bio, Santé, Tech et Social",
+          "url": "https://www.district3.co/fr",
+          "reference_id": "https://www.district3.co/fr",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "About District 3 | Quebec's Leading Startup Incubator",
+          "url": "https://www.district3.co/about",
+          "reference_id": "https://www.district3.co/about",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Notre histoire • Maison Notman | District 3 Innovation",
+          "url": "https://www.linkedin.com/posts/district-3-innovation-hub_notre-histoire-maison-notman-activity-7212210550280204288-De9S",
+          "reference_id": "https://www.linkedin.com/posts/district-3-innovation-hub_notre-histoire-maison-notman-activity-7212210550280204288-De9S",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Rent a Dedicated Desk Space in Montreal | Free trial day | Plateau Mont-Royal | ECTO, a cooperative shared workspace",
+          "url": "https://ecto.coop/rent-a-desk/",
+          "reference_id": "https://ecto.coop/rent-a-desk/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Anticafe Montreal - Pay for Time, Not Coffee",
+          "url": "https://anticafe.team/",
+          "reference_id": "https://anticafe.team/",
+          "access_status": "empty_extraction"
+        }
+      ],
+      "actual_access_failures": [],
+      "observation": "Discovered District 3 official services, about page and historical open coworking post. ECTO English page and AntiCafe homepage requested; AntiCafe direct open yielded zero extracted lines."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "find": [
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/",
+            "pattern": "$"
+          },
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/",
+            "pattern": "day"
+          },
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/",
+            "pattern": "tarif"
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://www.district3.co/about"
+          },
+          {
+            "ref_id": "https://www.district3.co/"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "About District 3 | Quebec's Leading Startup Incubator",
+          "url": "https://www.district3.co/about",
+          "reference_id": "https://www.district3.co/about",
+          "access_status": "body_read"
+        },
+        {
+          "title": "District 3 | Montreal Startup Incubator for Bio, Health, Tech & Social",
+          "url": "https://www.district3.co/",
+          "reference_id": "https://www.district3.co/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Rent a Dedicated Desk Space in Montreal | Free trial day | Plateau Mont-Royal | ECTO, a cooperative shared workspace",
+          "url": "https://ecto.coop/rent-a-desk/",
+          "reference_id": "https://ecto.coop/rent-a-desk/",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Rent a Dedicated Desk Space in Montreal | Free trial day | Plateau Mont-Royal | ECTO, a cooperative shared workspace",
+          "url": "https://ecto.coop/rent-a-desk/",
+          "reference_id": "https://ecto.coop/rent-a-desk/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Rent a Dedicated Desk Space in Montreal | Free trial day | Plateau Mont-Royal | ECTO, a cooperative shared workspace",
+          "url": "https://ecto.coop/rent-a-desk/",
+          "reference_id": "https://ecto.coop/rent-a-desk/",
+          "access_status": "find_no_match"
+        }
+      ],
+      "actual_access_failures": [],
+      "observation": "District 3 current official about/home pages readable. About lists weekday 9–5 first-come-first-served workstations and bookable hybrid conference rooms. ECTO English page states $200 monthly, four meeting hours; English page lacks later French-page term detail."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "click": [
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/",
+            "id": 17
+          },
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/",
+            "id": 2
+          },
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/",
+            "id": 7
+          },
+          {
+            "ref_id": "https://www.district3.co/about",
+            "id": 73
+          }
+        ],
+        "search_query": [
+          {
+            "q": "site:montrealcowork.com \"journée\" \"275\""
+          },
+          {
+            "q": "Anticafé Montréal tarif 294 Sainte Catherine salle privée réservation"
+          },
+          {
+            "q": "site.revenuquebec.ca TPS TVQ 5% 9,975% calcul taxes"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "Calcul des taxes | Revenu Québec",
+          "url": "https://www.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/perception-de-la-tps-et-de-la-tvq/calcul-des-taxes/",
+          "reference_id": "https://www.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/perception-de-la-tps-et-de-la-tvq/calcul-des-taxes/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Règles de base relatives à l'application de la TPS/TVH et de la TVQ | Revenu Québec",
+          "url": "https://www.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/regles-de-base-relatives-a-lapplication-de-la-tpstvh-et-de-la-tvq/?cHash=3b3f7af945fc7efc2166cee407c11eda&chash=1f4d2c02357f272c0b457755db3a9814",
+          "reference_id": "https://www.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/regles-de-base-relatives-a-lapplication-de-la-tpstvh-et-de-la-tvq/?cHash=3b3f7af945fc7efc2166cee407c11eda&chash=1f4d2c02357f272c0b457755db3a9814",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Reservation - Anticafe Montreal",
+          "url": "https://anticafe.team/reservation",
+          "reference_id": "https://anticafe.team/reservation",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Calcul des taxes à remettre | Revenu Québec",
+          "url": "https://www-prd.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/declaration-de-la-tps-et-de-la-tvq/methode-de-calcul-pour-les-organismes-de-bienfaisance/calcul-des-taxes-a-remettre/",
+          "reference_id": "https://www-prd.revenuquebec.ca/fr/entreprises/taxes/tpstvh-et-tvq/declaration-de-la-tps-et-de-la-tvq/methode-de-calcul-pour-les-organismes-de-bienfaisance/calcul-des-taxes-a-remettre/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Revenu Québec- Renseignements généraux sur la TVQ et la TPS/TVH",
+          "url": "https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/details-courant/in-203/",
+          "reference_id": "https://www.revenuquebec.ca/fr/services-en-ligne/formulaires-et-publications/details-courant/in-203/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Achat d'un véhicule routier pour le vendre | Revenu Québec",
+          "url": "https://www-prd.revenuquebec.ca/fr/citoyens/taxes/biens-et-services-taxables-detaxes-ou-exoneres/tps-et-tvq/transport-et-vehicules-routiers/vehicules-routiers-citoyens/achat-dun-vehicule-routier/achat-dun-vehicule-routier-pour-le-vendre/",
+          "reference_id": "https://www-prd.revenuquebec.ca/fr/citoyens/taxes/biens-et-services-taxables-detaxes-ou-exoneres/tps-et-tvq/transport-et-vehicules-routiers/vehicules-routiers-citoyens/achat-dun-vehicule-routier/achat-dun-vehicule-routier-pour-le-vendre/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Taxes | Revenu Québec",
+          "url": "https://www.revenuquebec.ca/fr/entreprises/taxes/",
+          "reference_id": "https://www.revenuquebec.ca/fr/entreprises/taxes/",
+          "access_status": "search_index_only"
+        },
+        {
+          "title": "Prix de notre espace de coworking à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/tous-les-tarifs/",
+          "reference_id": "https://ecto.coop/tous-les-tarifs/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Location de bureaux privés à Montréal | Journée d’essai gratuite | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/nos-bureaux/",
+          "reference_id": "https://ecto.coop/nos-bureaux/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Location de salles de réunion ou de conférence à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/location-de-salles/",
+          "reference_id": "https://ecto.coop/location-de-salles/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Contact District 3 | Montreal Startup Incubator",
+          "url": "https://www.district3.co/contact",
+          "reference_id": "https://www.district3.co/contact",
+          "access_status": "body_read"
+        }
+      ],
+      "actual_access_failures": [],
+      "observation": "Followed ECTO official links to French tariff, monthly plan and meeting rooms; followed D3 official contact link. Final three queries found official Quebec tax calculation and indexed AntiCafe reservation address, contact and $10 fee. No additional web searches after this call."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "find": [
+          {
+            "ref_id": "https://ecto.coop/tous-les-tarifs/",
+            "pattern": "$"
+          },
+          {
+            "ref_id": "https://ecto.coop/nos-bureaux/",
+            "pattern": "$"
+          },
+          {
+            "ref_id": "https://ecto.coop/location-de-salles/",
+            "pattern": "$"
+          },
+          {
+            "ref_id": "https://www.district3.co/contact",
+            "pattern": "coworking"
+          },
+          {
+            "ref_id": "https://ecto.coop/nos-bureaux/",
+            "pattern": "tax"
+          },
+          {
+            "ref_id": "https://ecto.coop/nos-bureaux/",
+            "pattern": "coop"
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://anticafe.team/reservation"
+          },
+          {
+            "ref_id": "https://montrealcowork.com/postes-ouverts"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "Anticafe Montreal - Pay for Time, Not Coffee",
+          "url": "https://anticafe.team/reservation",
+          "reference_id": "https://anticafe.team/reservation",
+          "access_status": "empty_extraction"
+        },
+        {
+          "title": "Prix de notre espace de coworking à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/tous-les-tarifs/",
+          "reference_id": "https://ecto.coop/tous-les-tarifs/",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Location de bureaux privés à Montréal | Journée d’essai gratuite | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/nos-bureaux/",
+          "reference_id": "https://ecto.coop/nos-bureaux/",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Location de salles de réunion ou de conférence à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/location-de-salles/",
+          "reference_id": "https://ecto.coop/location-de-salles/",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Contact District 3 | Montreal Startup Incubator",
+          "url": "https://www.district3.co/contact",
+          "reference_id": "https://www.district3.co/contact",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Location de bureaux privés à Montréal | Journée d’essai gratuite | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/nos-bureaux/",
+          "reference_id": "https://ecto.coop/nos-bureaux/",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Location de bureaux privés à Montréal | Journée d’essai gratuite | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/nos-bureaux/",
+          "reference_id": "https://ecto.coop/nos-bureaux/",
+          "access_status": "body_read"
+        }
+      ],
+      "actual_access_failures": [
+        {
+          "url": "https://montrealcowork.com/postes-ouverts",
+          "error": "Internal Error; URL not accessible via this tool. Path was a guessed direct route, not a verified link."
+        }
+      ],
+      "observation": "ECTO French monthly plan reveals six-month commitment and 20% surcharge for shorter terms. AntiCafe reservation direct open yielded zero extracted lines; Montréal CoWork guessed /postes-ouverts path returned inaccessible/Internal Error. Failed finds recorded, not treated as absent services."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "find": [
+          {
+            "ref_id": "https://ecto.coop/tous-les-tarifs/",
+            "pattern": "Tarifs"
+          },
+          {
+            "ref_id": "https://ecto.coop/location-de-salles/",
+            "pattern": "salle"
+          },
+          {
+            "ref_id": "https://www.district3.co/contact",
+            "pattern": "contact"
+          },
+          {
+            "ref_id": "https://www.district3.co/",
+            "pattern": "coworking"
+          },
+          {
+            "ref_id": "https://ecto.coop/tous-les-tarifs/",
+            "pattern": "taxes"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "Prix de notre espace de coworking à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/tous-les-tarifs/",
+          "reference_id": "https://ecto.coop/tous-les-tarifs/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Location de salles de réunion ou de conférence à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/location-de-salles/",
+          "reference_id": "https://ecto.coop/location-de-salles/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Contact District 3 | Montreal Startup Incubator",
+          "url": "https://www.district3.co/contact",
+          "reference_id": "https://www.district3.co/contact",
+          "access_status": "body_read"
+        },
+        {
+          "title": "District 3 | Montreal Startup Incubator for Bio, Health, Tech & Social",
+          "url": "https://www.district3.co/",
+          "reference_id": "https://www.district3.co/",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Prix de notre espace de coworking à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/tous-les-tarifs/",
+          "reference_id": "https://ecto.coop/tous-les-tarifs/",
+          "access_status": "body_read"
+        }
+      ],
+      "actual_access_failures": [],
+      "observation": "ECTO French tariff page confirms all rates before tax, lifetime shares $350 (100+250), desk $200, four meeting hours and rooms $40/hour. Meeting-room page shows three sizes and booking links. D3 contact page publishes info@district3.co. Share requirement/refund/payment timing not stated in read sources."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "click": [
+          {
+            "ref_id": "https://www.district3.co/about",
+            "id": 4
+          },
+          {
+            "ref_id": "https://ecto.coop/nos-bureaux/",
+            "id": 9
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://montreal.ca/sujets/salles-de-travail-en-bibliotheque"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "Salles de travail en bibliothèque | Ville de Montréal",
+          "url": "https://montreal.ca/sujets/salles-de-travail-en-bibliotheque",
+          "reference_id": "https://montreal.ca/sujets/salles-de-travail-en-bibliotheque",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Startup Programs & Hands-on Coaching | District 3 Montreal",
+          "url": "https://www.district3.co/programs",
+          "reference_id": "https://www.district3.co/programs",
+          "access_status": "body_read"
+        },
+        {
+          "title": "Foire aux questions | Espace de coworking à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/foire-aux-questions/",
+          "reference_id": "https://ecto.coop/foire-aux-questions/",
+          "access_status": "body_read"
+        }
+      ],
+      "actual_access_failures": [],
+      "observation": "Followed D3 official services link to /programs: no university affiliation required, Quebec residence required for programs, selection 2–3 weeks, Validation ~25 hours/week and 3-hour weekly in-person session, Launch & Grow requires at least two cofounders. ECTO FAQ readable. City confirms free library workrooms requiring library card and advance booking; specific local room/call permission not established."
+    },
+    {
+      "tool": "web__run",
+      "arguments": {
+        "find": [
+          {
+            "ref_id": "https://ecto.coop/foire-aux-questions/",
+            "pattern": "membre"
+          },
+          {
+            "ref_id": "https://ecto.coop/foire-aux-questions/",
+            "pattern": "350"
+          },
+          {
+            "ref_id": "https://www.district3.co/programs",
+            "pattern": "cowork"
+          },
+          {
+            "ref_id": "https://www.district3.co/programs",
+            "pattern": "Canadian"
+          },
+          {
+            "ref_id": "https://www.district3.co/programs",
+            "pattern": "Canadian company"
+          }
+        ],
+        "response_length": "long"
+      },
+      "relevant_sources": [
+        {
+          "title": "Foire aux questions | Espace de coworking à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/foire-aux-questions/",
+          "reference_id": "https://ecto.coop/foire-aux-questions/",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Foire aux questions | Espace de coworking à Montréal | Plateau Mont-Royal | ECTO, espace de travail partagé coopératif",
+          "url": "https://ecto.coop/foire-aux-questions/",
+          "reference_id": "https://ecto.coop/foire-aux-questions/",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Startup Programs & Hands-on Coaching | District 3 Montreal",
+          "url": "https://www.district3.co/programs",
+          "reference_id": "https://www.district3.co/programs",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Startup Programs & Hands-on Coaching | District 3 Montreal",
+          "url": "https://www.district3.co/programs",
+          "reference_id": "https://www.district3.co/programs",
+          "access_status": "find_no_match"
+        },
+        {
+          "title": "Startup Programs & Hands-on Coaching | District 3 Montreal",
+          "url": "https://www.district3.co/programs",
+          "reference_id": "https://www.district3.co/programs",
+          "access_status": "find_no_match"
+        }
+      ],
+      "actual_access_failures": [],
+      "observation": "Additional finds on already-read pages produced no matches. They do not establish absence of fees or eligibility terms."
+    }
+  ]
+}

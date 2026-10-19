@@ -1,0 +1,58 @@
+{
+  "purpose": "Factual setup-read addendum only. No further research was performed and neither answer.md nor the original search-log.json was changed.",
+  "omission": "The setup reads below were executed before the audit array was initialized. They were omitted from the original search-log.json.",
+  "skill_was_read": true,
+  "setup_reads": [
+    {
+      "tool": "exec_command",
+      "invoked_via": "functions.exec -> tools.exec_command",
+      "arguments": {
+        "cmd": "pwd && ls -la && cat workspace-scout/SKILL.md",
+        "workdir": "<RUN_DIR>",
+        "max_output_tokens": 14000
+      },
+      "files_read": [
+        "<RUN_DIR>/workspace-scout/SKILL.md"
+      ],
+      "result": "Succeeded; the full skill text was returned. The same command also printed the working directory and its directory listing."
+    },
+    {
+      "tool": "exec_command",
+      "invoked_via": "functions.exec -> tools.exec_command",
+      "arguments": {
+        "cmd": "cat workspace-scout/references/search-guide.md && printf '\\n---CANDIDATE---\\n' && cat workspace-scout/references/candidate-record.md",
+        "workdir": "<RUN_DIR>",
+        "max_output_tokens": 16000
+      },
+      "files_read": [
+        "<RUN_DIR>/workspace-scout/references/search-guide.md",
+        "<RUN_DIR>/workspace-scout/references/candidate-record.md"
+      ],
+      "result": "Succeeded; both supporting reference texts were returned."
+    },
+    {
+      "tool": "exec_command",
+      "invoked_via": "functions.exec -> tools.exec_command",
+      "arguments": {
+        "cmd": "cat <HOST_CODEX>/plugins/cache/openai-curated-remote/stripe/8.0.0/skills/stripe-directory/SKILL.md",
+        "workdir": "<RUN_DIR>",
+        "max_output_tokens": 12000
+      },
+      "files_read": [
+        "<HOST_CODEX>/plugins/cache/openai-curated-remote/stripe/8.0.0/skills/stripe-directory/SKILL.md"
+      ],
+      "result": "Succeeded; the full Stripe Directory skill text was returned."
+    }
+  ],
+  "additional_setup_operation": {
+    "tool": "functions.exec",
+    "operation": "Local tool-metadata discovery; no external research call",
+    "exact_expression": "ALL_TOOLS.filter(x=>/directory/i.test(x.name+\" \"+x.description)).map(x=>({name:x.name,description:x.description.slice(0,500)}))",
+    "omitted_from_original_search_log": true
+  },
+  "not_read": [
+    "workspace-scout/references/check-input.md",
+    "workspace-scout/scripts/check_candidates.py"
+  ],
+  "scope_note": "No other Skill or reference file was read during this execution. The later `which stripe && stripe directory --help` prerequisite check is already recorded in the original search-log.json."
+}

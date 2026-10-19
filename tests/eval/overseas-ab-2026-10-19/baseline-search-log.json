@@ -1,0 +1,488 @@
+{
+  "date": "2026-10-19",
+  "working_directory": "<RUN_DIR>",
+  "entries": [
+    {
+      "sequence": 1,
+      "tool": "exec_command",
+      "arguments": {
+        "cmd": "cat <HOST_CODEX>/plugins/cache/openai-curated-remote/stripe/8.0.0/skills/stripe-directory/SKILL.md",
+        "workdir": "<RUN_DIR>",
+        "max_output_tokens": 6000
+      },
+      "observation": "Read installed general Directory skill as required before provider discovery. No repository files or workspace-specific skills inspected."
+    },
+    {
+      "sequence": 2,
+      "tool": "exec_command",
+      "arguments": {
+        "cmd": "which stripe",
+        "workdir": "<RUN_DIR>",
+        "max_output_tokens": 1000
+      },
+      "returned_or_visited_urls": [],
+      "access_failures": [],
+      "observation": "stripe not found",
+      "failure": true
+    },
+    {
+      "sequence": 3,
+      "tool": "web__run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://stripe.directory"
+          }
+        ],
+        "response_length": "short"
+      },
+      "returned_or_visited_urls": [
+        "https://stripe.directory",
+        "https://stripe.directory/:"
+      ],
+      "access_failures": [
+        {
+          "urls": [
+            "https://stripe.directory",
+            "https://stripe.directory/:"
+          ],
+          "reported_error": "Internal Error ()\n [wordlim: 200] Source: open({\"ref_id\":\"https://stripe.directory\",\"lineno\":null}); Total lines: 1\nL0: Failed to fetch https://stripe.directory/: (400) Unsupported content-type: text/markdown"
+        }
+      ],
+      "observation": "Attempted required Directory setup documentation because Stripe CLI is unavailable."
+    },
+    {
+      "sequence": 4,
+      "tool": "web__run",
+      "arguments": {
+        "search_query": [
+          {
+            "q": "coworking Plateau Mont Royal forfait 6 jours mois salle réunion tarifs"
+          },
+          {
+            "q": "coworking downtown Montreal 5 10 day pass monthly meeting room pricing"
+          },
+          {
+            "q": "Montreal library coworking private study room non student BAnQ reservation calls"
+          }
+        ],
+        "response_length": "long"
+      },
+      "returned_or_visited_urls": [
+        "https://montreal.ca/en/topics/library-study-rooms",
+        "https://ecto.coop/rent-a-desk/",
+        "https://groundswellcoworking.com/pricing",
+        "https://montrealcowork.com/",
+        "https://wiki.coworking.com/w/page/16583617/CoworkingMontreal?mode=embedded",
+        "https://montreal.ca/sujets/salles-de-travail-en-bibliotheque",
+        "https://2727coworking.com/workspace/day-workspace/day-pass-vs-monthly-membership/",
+        "https://centrepnl.com/location-de-salle/",
+        "https://swivl.ca/coworking",
+        "https://www.hec.ca/en/library/services/study-rooms-espace-creation",
+        "https://www.wework.com/en-GB/buildings/1010-sainte-catherine-ouest--montreal--QC",
+        "https://montreal.ca/en/places/bibliotheque-saul-bellow",
+        "https://www.reddit.com/r/montreal/comments/1v7fnfy/where_to_findrent_for_an_hour_a_privacy_pod/",
+        "https://2727coworking.com/articles/pdfs/coworking-plateau-mont-royal-prix-2026.pdf",
+        "https://ville.montreal.qc.ca/pls/portal/url/ITEM/2AE4ECAC2932E012E0530A930132E012",
+        "https://cdn.cegep-heritage.qc.ca/Current_Students/Getting_Started/guide_student_2023_2024.pdf",
+        "https://www2.banq.qc.ca/documents/services/location_salles/Reglements_utilisation_des_espaces_en.pdf",
+        "https://2727coworking.com/articles/pdfs/shared-office-space-montreal-pricing-locations.pdf",
+        "https://restoplateau.com/wp-content/uploads/2023/05/Grille-tarifaire-Location-de-salle-Resto-Plateau.pdf",
+        "https://www.reddit.com/r/montreal/comments/1shwxzt/temporary_workspace_with_wifi_2_hours_on_a/",
+        "https://www.reddit.com/r/u_Workonhub/comments/1wf0tbe/coworking_day_passes_or_monthly_membership_a/",
+        "https://www.reddit.com/r/Library/comments/1jz2754",
+        "https://www.reddit.com/r/montreal/comments/18lfskl",
+        "https://www.reddit.com/r/mcgill/comments/1tfplql/where_do_people_in_montreal_go_when_they_need_a/",
+        "https://www.reddit.com/r/mcgill/comments/iilacp",
+        "https://www.reddit.com/r/montreal/comments/qvm2ea",
+        "https://www.reddit.com/r/montreal/comments/1nkf831/suggestions_pour_espace_de_travail_entre_coll%C3%A8gues/",
+        "https://www.reddit.com/r/montreal/comments/1sihg5e/now_that_it_has_been_a_few_years_how_do_you_feel/",
+        "https://www.reddit.com/r/mcgill/comments/o2c1pd",
+        "https://www.reddit.com/r/montreal/comments/1nwjm93/any_good_place_in_montreal_for_nightowl_to_work/",
+        "https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_du_Bois%C3%A9",
+        "https://en.wikipedia.org/wiki/Biblioth%C3%A8que_et_Archives_nationales_du_Qu%C3%A9bec",
+        "https://en.wikipedia.org/wiki/Grande_Biblioth%C3%A8que",
+        "https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_publique_de_Westmount",
+        "https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_tiers_lieu",
+        "https://fr.wikipedia.org/wiki/Biblioth%C3%A8que_municipale"
+      ],
+      "access_failures": [],
+      "observation": "Initial discovery for Plateau, downtown, and public-library alternatives."
+    },
+    {
+      "sequence": 5,
+      "tool": "web__run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/"
+          },
+          {
+            "ref_id": "https://montrealcowork.com/"
+          }
+        ],
+        "search_query": [
+          {
+            "q": "coworking Montréal centre ville forfait 10 jours 200 salle réunion"
+          },
+          {
+            "q": "Montréal coworking Plateau forfait temps partiel 6 jours 8 jours salle réunion"
+          },
+          {
+            "q": "Montreal coworking low cost Canadian company university affiliation desk 100 150"
+          }
+        ],
+        "response_length": "long"
+      },
+      "returned_or_visited_urls": [
+        "https://popuplab.ca/salle-de-reunion/",
+        "https://cowrk.club/listing/crew-collective-cafe/",
+        "https://www.espacemileend.com/coworking",
+        "https://montrealcowork.com/",
+        "https://montrealcowork.com/bureaux-prives",
+        "https://metspace.com/",
+        "https://2727coworking.com/spaces/hot-desk/",
+        "https://www.entrepotsdominion.com/coworking",
+        "https://2727coworking.com/day-pass-and-desks/",
+        "https://nuage-b.com/en/lp-flexible-affordable-hot-desk-space-in-montreal/",
+        "https://anticafe.team/",
+        "https://www.clarkwerk.ca/",
+        "https://coworklive.ma/themes/coworking/front/images/GRILLETARIFAIRECWLV.Finale.pdf",
+        "https://www.leloft.org/_files/ugd/a20198_78c1ce7ad61949e993c348dce158344b.pdf",
+        "https://coworkingjp.fr/wp-content/uploads/2024/01/Plaquette-Commerciale-Coworking-1.pdf",
+        "https://jasminehall.org/pdf/JasmineHall_BrochureTarifaire.pdf",
+        "https://lessentiel-coworking.com/wp-content/uploads/2025/03/Tarifs-Salaise.pdf",
+        "https://mediamontreal.intercontinental.com/ihgmontreal/wp-content/uploads/2024/01/30142507/Majordome-Forfait-138-Journee-entiere-2024.pdf",
+        "https://www.reddit.com/r/emploi/comments/1x7klfh/mon_entreprise_passe_au_flex_office_le_mois/",
+        "https://www.reddit.com/r/montreal/comments/1nkf831/suggestions_pour_espace_de_travail_entre_coll%C3%A8gues/",
+        "https://fr.wikipedia.org/wiki/Place_Bonaventure",
+        "https://www.reddit.com/r/QuebecTI/comments/1wolvof/les_r%C3%A9unions_virtuelles_au_bureau_contribueraient/",
+        "https://en.wikipedia.org/wiki/Industrious",
+        "https://fr.wikipedia.org/wiki/%C3%89difice_Gilles-Hocquart",
+        "https://fr.wikipedia.org/wiki/Palais_des_congr%C3%A8s_de_Montr%C3%A9al",
+        "https://www.reddit.com/r/Quebec/comments/1sseovm/retour_en_pr%C3%A9sentiel_3_jourssemaine_les/",
+        "https://ecto.coop/rent-a-desk/"
+      ],
+      "access_failures": [
+        {
+          "urls": [
+            "https://montrealcowork.com/"
+          ],
+          "reported_error": "Internal Error ()\n [wordlim: 200] Source: open({\"ref_id\":\"https://montrealcowork.com/\",\"lineno\":null}); Total lines: 1"
+        }
+      ],
+      "observation": "Read ECTO and Montreal CoWork official pages; sought part-time downtown and Plateau plans and eligibility-sensitive low-cost alternatives."
+    },
+    {
+      "sequence": 6,
+      "tool": "web__run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://ecto.coop/rent-a-desk/",
+            "lineno": 45
+          },
+          {
+            "ref_id": "https://nuage-b.com/en/lp-flexible-affordable-hot-desk-space-in-montreal/"
+          },
+          {
+            "ref_id": "https://anticafe.team/"
+          }
+        ],
+        "response_length": "long"
+      },
+      "returned_or_visited_urls": [
+        "https://ecto.coop/rent-a-desk/",
+        "https://nuage-b.com/en/lp-flexible-affordable-hot-desk-space-in-montreal/",
+        "https://anticafe.team/"
+      ],
+      "access_failures": [],
+      "observation": "Verify ECTO inclusions, Nuage B promotional versus regular pricing, and AntiCafe current passes.",
+      "extraction_note": "Anticafe official page opened successfully but returned no extracted text; later official search result supplied readable pricing."
+    },
+    {
+      "sequence": 7,
+      "tool": "web__run",
+      "arguments": {
+        "search_query": [
+          {
+            "q": "coworking \"Montréal\" \"10 jours\" \"salle\""
+          },
+          {
+            "q": "coworking Montréal centre ville \"Canadian\" \"company\""
+          },
+          {
+            "q": "Montréal coworking \"universitaire\" \"affiliation\""
+          }
+        ],
+        "response_length": "long"
+      },
+      "returned_or_visited_urls": [
+        "https://ecto.coop/location-de-salles/",
+        "https://montreal.ca/articles/reserver-une-salle-multifonctionnelle-au-centre-sanaaq-99462",
+        "https://www.centrestpierre.org/nos-salles/reserver-une-salle/",
+        "https://acdps.umontreal.accesstomemory.org/affiliation",
+        "https://pmecoach.nyc3.digitaloceanspaces.com/ihgmontreal/wp-content/uploads/2023/03/31093056/Forfaits-terrasse-Nordheimer_2023_FR.pdf",
+        "https://ciusss-estmtl.gouv.qc.ca/actualite/nouvelle-affiliation-universitaire-entre-le-ciusss-emtl-et-luqam-au-benefice-de-la-population",
+        "https://ca.linkedin.com/company/nomad-coliving",
+        "http://nomadcoliving.com",
+        "https://www.agecvm.org/bottin/a%C3%A9csp-association-des-%C3%A9tudiants-des-cycles-sup%C3%A9rieurs-de-polytechnique",
+        "https://fr.wikipedia.org/wiki/Universit%C3%A9_de_Montr%C3%A9al",
+        "https://www.umontreal.ca/",
+        "https://www.suttonquebec.com/fr/inscription/location-d-espace-commercial-bureau-a-louer-663-2e-avenue-montreal-lachine.html?noInscription=27750065&typeInscription=2",
+        "https://www.faecum.qc.ca/nouvelles/actualites/la-faecum-affiliee-a-l-ueq",
+        "https://locatifqc.ca/coworking.php",
+        "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/proces_verbaux/AU/2023/AU0655_2024-04-22.pdf",
+        "https://2727coworking.com/articles/pdfs/espaces-cotravail-montreal-proximite-metro-fr.pdf",
+        "https://agefac.ca/affiliation-a-lueq/",
+        "https://publications.polymtl.ca/1982/1/2015_OliverLeyvaRamos.pdf",
+        "https://www.laabarchitecture.com/plus-compagny-cossette-creative-campus",
+        "https://2727coworking.com/articles/pdfs/bureau-journee-coworking-montreal.pdf",
+        "https://fr.wikipedia.org/wiki/Universit%C3%A9_du_Qu%C3%A9bec_%C3%A0_Montr%C3%A9al",
+        "https://secretariatgeneral.umontreal.ca/public/secretariatgeneral/documents/proces_verbaux/AU/2011/AU534_14-11-11_01.pdf",
+        "https://fr.wikipedia.org/wiki/Universit%C3%A9_Concordia",
+        "https://en.wikipedia.org/wiki/Universit%C3%A9_de_Montr%C3%A9al",
+        "https://fr.wikipedia.org/wiki/Institut_Thomas_More",
+        "https://fr.wikipedia.org/wiki/Universit%C3%A9_McGill",
+        "https://www.reddit.com/r/montreal/comments/10w2bay",
+        "https://www.reddit.com/r/canada/comments/xzopd3/canadians_companies_turning_to_amenities_to_lure/"
+      ],
+      "access_failures": [],
+      "observation": "Sought explicit ten-day products and corporate/university eligibility restrictions."
+    },
+    {
+      "sequence": 8,
+      "tool": "web__run",
+      "arguments": {
+        "search_query": [
+          {
+            "q": "Montréal coworking \"Notman\" \"tarifs\""
+          },
+          {
+            "q": "site.anticafe.team pricing membership meeting room"
+          },
+          {
+            "q": "site.revenuquebec.ca GST QST 5% 9.975%"
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://nuage-b.com/en/"
+          },
+          {
+            "ref_id": "https://montrealcowork.com/postes-ouverts"
+          },
+          {
+            "ref_id": "https://ecto.coop/faq/"
+          }
+        ],
+        "response_length": "long"
+      },
+      "returned_or_visited_urls": [
+        "https://anticafe.team/",
+        "https://www-prd.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/basic-rules-for-applying-the-gsthst-and-qst/types-of-supplies/taxable-supplies/",
+        "https://www-prd.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/basic-rules-for-applying-the-gsthst-and-qst/",
+        "https://anticafe.eu/en/faq",
+        "https://2727coworking.com/articles/pdfs/espaces-cotravail-montreal-proximite-metro-fr.pdf",
+        "https://2727coworking.com/articles/fr/pdfs/analyse-comparative-espaces-coworking-montreal.pdf",
+        "https://2727coworking.com/articles/fr/analyse-comparative-espaces-coworking-montreal",
+        "https://2727coworking.com/articles/fr/pdfs/les-10-meilleurs-espaces-coworking-montreal.pdf",
+        "https://2727coworking.com/articles/fr/prix-coworking-centre-ville-montreal-2026",
+        "https://2727coworking.com/guides/best-coworking-spaces-montreal-2026-fr/",
+        "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate/calculator.html",
+        "https://www-prd.revenuquebec.ca/en/online-services/forms-and-publications/current-details/in-203-v/",
+        "https://anticafe.eu/en",
+        "https://montrealtips.com/fr/2025/05/24/top-10-places-to-meet-like-minded-entrepreneurs-in-montreal/",
+        "https://montrealtips.com/wp-content/uploads/2025/05/redd-francisco-5U_28ojjgms-unsplash-scaled.jpg",
+        "https://montrealtips.com/wp-content/uploads/2023/11/Screen-Shot-2021-06-02-at-9-1.webp",
+        "https://www.registredesactionscollectives.quebec/fr/Fichier/Document?NomFichier=3467.pdf",
+        "https://fr.scribd.com/document/932081726/Brochure-Espaces-Anticafe",
+        "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/cybersecurite_numerique/Acces_information/Demande_acces/2025-2026/36_Decision_2025-2026.pdf",
+        "https://2727coworking.com/articles/pdfs/bureau-prive-coworking-montreal-prix-2026.pdf",
+        "https://www.reddit.com/r/cantax/comments/km1ge5",
+        "https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/special-cases-gsthst-and-qst/suppliers-outside-quebec/qst-registration-for-suppliers-outside-quebec/suppliers-located-in-canada-but-outside-quebec-who-are-registered-for-the-gsthst/",
+        "https://fr.wikipedia.org/wiki/Taxe_de_vente_du_Qu%C3%A9bec",
+        "https://www.reddit.com/r/Quebec/comments/1j7w6wi",
+        "https://www.reddit.com/r/cantax/comments/1lus8ra",
+        "https://en.wikipedia.org/wiki/Sales_taxes_in_Canada",
+        "https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/basic-rules-for-applying-the-gsthst-and-qst/",
+        "https://www.reddit.com/r/SmallBusinessCanada/comments/1u1eplu/on_hst_collecting_soleproprietorship_looking_to/",
+        "https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/registering-for-the-gst-and-qst/",
+        "https://www.reddit.com/r/shopify/comments/1jw7ydl",
+        "https://www.reddit.com/r/Accounting/comments/18rzz93",
+        "https://www.reddit.com/r/SmallBusinessCanada/comments/1j54g7h",
+        "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-which-rate.html",
+        "https://www.reddit.com/r/SmallBusinessCanada/comments/1sldp6m/qc_qst_registration_bc/",
+        "https://www.reddit.com/r/iOSProgramming/comments/sn3ld1",
+        "https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/registering-for-the-gst-and-qst/small-suppliers/",
+        "https://www.reddit.com/r/GnuCash/comments/1igewik",
+        "https://www.reddit.com/r/QuebecFinance/comments/1r897ls/comment_vous_g%C3%A9rez_vos_finances_en_tant_que/",
+        "https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/charge-collect-receipts-invoices.html",
+        "https://www.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/collecting-gst-and-qst/preparing-invoices/",
+        "https://www.reddit.com/r/GnuCash/comments/1af9ub0",
+        "https://en.wikipedia.org/wiki/Taxation_in_Canada",
+        "https://zh.wikipedia.org/wiki/%E5%8A%A0%E6%8B%BF%E5%A4%A7%E9%8A%B7%E5%94%AE%E7%A8%85",
+        "https://en.wikipedia.org/wiki/Politics_of_Quebec",
+        "https://en.wikipedia.org/wiki/Value-added_tax",
+        "https://nuage-b.com/en/",
+        "https://montrealcowork.com/postes-ouverts",
+        "https://ecto.coop/faq/"
+      ],
+      "access_failures": [
+        {
+          "urls": [
+            "https://montrealcowork.com/postes-ouverts"
+          ],
+          "reported_error": "Internal Error ()\n [wordlim: 200] Source: open({\"ref_id\":\"https://montrealcowork.com/postes-ouverts\",\"lineno\":null}); Total lines: 1"
+        },
+        {
+          "urls": [
+            "https://ecto.coop/faq/"
+          ],
+          "reported_error": "Internal Error ()\n [wordlim: 200] Source: open({\"ref_id\":\"https://ecto.coop/faq/\",\"lineno\":null}); Total lines: 1"
+        }
+      ],
+      "observation": "Final search queries: Notman published rates, AntiCafe current prices, official sales-tax rates. Read Nuage B main site, Montreal CoWork open-desk product, and ECTO FAQ."
+    },
+    {
+      "sequence": 9,
+      "tool": "web__run",
+      "arguments": {
+        "click": [
+          {
+            "ref_id": "<unresolved-tool-reference>",
+            "id": 9
+          },
+          {
+            "ref_id": "<unresolved-tool-reference>",
+            "id": 7
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://notman.org/en/"
+          }
+        ],
+        "response_length": "long"
+      },
+      "returned_or_visited_urls": [
+        "https://notman.org/en/",
+        "https://ecto.coop/foire-aux-questions/",
+        "https://ecto.coop/location-de-salles/"
+      ],
+      "access_failures": [
+        {
+          "urls": [
+            "https://notman.org/en/"
+          ],
+          "reported_error": "Internal Error ()\n [wordlim: 200] Source: open({\"ref_id\":\"https://notman.org/en/\",\"lineno\":null}); Total lines: 1\nL0: URL https://notman.org/en/ is not accessible via this tool."
+        }
+      ],
+      "observation": "Read ECTO FAQ and official room rental details; checked Notman as another central coworking candidate."
+    },
+    {
+      "sequence": 10,
+      "tool": "web__run",
+      "arguments": {
+        "click": [
+          {
+            "ref_id": "<unresolved-tool-reference>",
+            "id": 2
+          }
+        ],
+        "open": [
+          {
+            "ref_id": "https://montreal.ca/en/topics/library-study-rooms"
+          },
+          {
+            "ref_id": "https://montrealcowork.com/postes-ouverts/"
+          }
+        ],
+        "response_length": "long"
+      },
+      "returned_or_visited_urls": [
+        "https://montreal.ca/en/topics/library-study-rooms",
+        "https://montrealcowork.com/postes-ouverts/",
+        "https://ecto.coop/nos-bureaux/"
+      ],
+      "access_failures": [
+        {
+          "urls": [
+            "https://montrealcowork.com/postes-ouverts/"
+          ],
+          "reported_error": "Internal Error ()\n [wordlim: 200] Source: open({\"ref_id\":\"https://montrealcowork.com/postes-ouverts/\",\"lineno\":null}); Total lines: 1\nL0: URL https://montrealcowork.com/postes-ouverts/ is not accessible via this tool."
+        }
+      ],
+      "observation": "Cross-checked current French ECTO flex plans, official library-room eligibility, and Montreal CoWork desk product (trailing slash retry)."
+    },
+    {
+      "sequence": 11,
+      "tool": "web__run",
+      "arguments": {
+        "open": [
+          {
+            "ref_id": "https://popuplab.ca/bureau-flex/"
+          }
+        ],
+        "response_length": "long"
+      },
+      "returned_or_visited_urls": [
+        "https://popuplab.ca/bureau-flex/"
+      ],
+      "access_failures": [
+        {
+          "urls": [
+            "https://popuplab.ca/bureau-flex/"
+          ],
+          "reported_error": "Internal Error ()\n [wordlim: 200] Source: open({\"ref_id\":\"https://popuplab.ca/bureau-flex/\",\"lineno\":null}); Total lines: 1\nL0: URL https://popuplab.ca/bureau-flex/ is not accessible via this tool."
+        }
+      ],
+      "observation": "Checked Popuplab's specific flex-desk product as an independent Plateau alternative."
+    }
+  ],
+  "counts": {
+    "individual_web_search_queries": 12,
+    "individual_page_opens_or_clicks": 16,
+    "web_tool_calls": 9
+  },
+  "notes": [
+    "No operators contacted, no forms submitted, no accounts created, no purchases made.",
+    "Directory CLI was unavailable; required setup site returned unsupported text/markdown. Continued with public web research rather than installing software or authenticating.",
+    "Search snippets are not operator-confirmed quotes. Inaccessible pages are not treated as verified plan terms.",
+    "No full copyrighted page text retained in this log."
+  ],
+  "important_sources": [
+    {
+      "url": "https://ecto.coop/nos-bureaux/",
+      "observation": "French product page explicitly states six-month base term, 20% surcharge for shorter commitment, CAD 200/month flex with four meeting hours; six-month-valid day passes CAD30 or ten for CAD250. Preferred over incomplete English product page."
+    },
+    {
+      "url": "https://ecto.coop/location-de-salles/",
+      "observation": "Rooms available to members and nonmembers; weekday 9–17 rate CAD40/hour; three room sizes. Reservation and acoustic privacy require confirmation."
+    },
+    {
+      "url": "https://anticafe.team/",
+      "observation": "Official search result gives CAD21.85 daily cap, CAD10 room reservation statement, 294 Sainte-Catherine O, 10–22 daily; direct extraction blank. Do not interpret CAD10 as complete room price."
+    },
+    {
+      "url": "https://montrealcowork.com/",
+      "observation": "Official search result lists open desks from CAD275/month plus taxes and rooms from CAD25/hour plus taxes. Direct access failed."
+    },
+    {
+      "url": "https://montrealcowork.com/bureaux-prives",
+      "observation": "Official search result describes phone booths for all members, but not proof of four reservable meeting hours in open-desk plan."
+    },
+    {
+      "url": "https://montreal.ca/en/topics/library-study-rooms",
+      "observation": "Municipal libraries offer free individual/group work rooms reservable with library card; site does not establish solo commercial video-call permission or this user's card eligibility."
+    },
+    {
+      "url": "https://nuage-b.com/en/lp-flexible-affordable-hot-desk-space-in-montreal/",
+      "observation": "CAD150 promotion explicitly expired 2025-03-20; not a current eligible quote. Main site identifies Saint-Henri, outside comparison areas."
+    },
+    {
+      "url": "https://www-prd.revenuquebec.ca/en/businesses/consumption-taxes/gsthst-and-qst/basic-rules-for-applying-the-gsthst-and-qst/types-of-supplies/taxable-supplies/",
+      "observation": "GST 5% and QST9.975%, supporting gross-cost calculations."
+    }
+  ]
+}
