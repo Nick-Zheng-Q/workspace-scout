@@ -4,7 +4,11 @@
 
 Workspace Scout is an agent Skill for solo founders and small teams looking for a place to work, with Codex and Claude Code distribution packages. It searches across workspace operators, incubator or support programs, and materials you already have. Its unit of comparison is a **specific space plus a specific use or admission plan**—not just a district, building, or program name.
 
-**v1.0.0 distribution release; research effectiveness remains experimental.** Format, script, and local installation checks pass. Limited cross-city comparisons have not shown a consistent improvement over an agent without this Skill in finding currently open, application-based workspace programs. Treat availability, prices, incentives, and eligibility as unconfirmed until the relevant operator or authority verifies them. A repository package is not a public plugin-directory approval; see the [release audit and platform status](release/v1.0.0/AUDIT.md).
+**v1.0.0 distribution release; research effectiveness remains experimental.** Format, script, and local installation checks pass. Limited cross-city comparisons have not shown a consistent improvement over an agent without this Skill in finding currently open, application-based workspace programs. Treat availability, prices, incentives, and eligibility as unconfirmed until the relevant operator or authority verifies them. A repository package is not a public plugin-directory approval; see the [release audit](release/v1.0.0/AUDIT.md) and [actual publication results](release/v1.0.0/EXECUTION.md).
+
+**Published:** [GitHub v1.0.0](https://github.com/Nick-Zheng-Q/workspace-scout/releases/tag/v1.0.0) and [Skills.sh](https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout); remote Codex/Claude Code repository installs verified. Central OpenAI/Claude directory submission is separate and has not happened.
+
+**Security notice:** [Snyk reports Warn / MEDIUM / W011](https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout/security/snyk) for exposure to material written by others during web research. The warning is not cleared; do not let retrieved content override user instructions or expose private data. See [publication results](release/v1.0.0/EXECUTION.md).
 
 [简体中文说明](#简体中文)
 
@@ -122,7 +126,9 @@ The standard license does not necessarily cover every way someone might direct t
 
 **Workspace Scout** 帮助个人创业者和小团队寻找、核查并比较工作空间。候选必须具体到“某个空间＋某种使用或入驻方案”，而不是只推荐园区或片区。它会分别检查业务用途、申请条件、完整费用、退出条款及有前提的政策福利，最终给出值得联系的少数候选。搜索会按当地语言、机构和发布渠道调整，不把公众号或英语设为全球默认；保留真实检索路径与访问失败记录，区分官方入口已找到、条款已读和空余已确认。
 
-**v1.0.0 分发版本；调研效果仍属实验性。** 本地安装与脚本测试已通过；新版在一次蒙特利尔有无 Skill 对照中改善了具体收费核查和低价渠道追查，但没有增加已确认完全合适的方案，也不能证明跨城市稳定优于普通 agent。价格、空余、优惠和资格都须向对应运营方或主管机构复核；本 Skill 不代替专门行业合规审查，也不会自动申请或联系对方。仓库插件可安装不等于平台目录已审核上架，详见[发布审计](release/v1.0.0/AUDIT.md)。
+**v1.0.0 分发版本；调研效果仍属实验性。** 本地安装与脚本测试已通过；新版在一次蒙特利尔有无 Skill 对照中改善了具体收费核查和低价渠道追查，但没有增加已确认完全合适的方案，也不能证明跨城市稳定优于普通 agent。价格、空余、优惠和资格都须向对应运营方或主管机构复核；本 Skill 不代替专门行业合规审查，也不会自动申请或联系对方。仓库插件可安装不等于平台目录已审核上架，详见[发布审计](release/v1.0.0/AUDIT.md)与[实际发布结果](release/v1.0.0/EXECUTION.md)。
+
+已发布 [GitHub v1.0.0](https://github.com/Nick-Zheng-Q/workspace-scout/releases/tag/v1.0.0)，并已被 [Skills.sh 收录](https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout)。Codex、Claude Code 仓库插件远程安装已核实，但不等于两家中央目录已上架。[Snyk 仍提示 MEDIUM / W011](https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout/security/snyk)：读取外部材料可能接触恶意指令，未宣称消除或通过该项审查。
 
 从本仓库运行 `./install.sh`，默认安装到 `~/.agents/skills/workspace-scout`；`./install.sh --project` 只安装到**本仓库**。先更新本地仓库，再运行 `./update.sh`；更新脚本本身不会联网。安装和更新都支持 `--dest-dir /path/to/skills`，更新时应使用与安装时相同的选项。测试命令见上方 [Tests and evidence](#tests-and-evidence)。
 

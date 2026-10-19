@@ -1,0 +1,479 @@
+{
+  "date_asia_shanghai": "2026-10-19T23:56:55+08:00",
+  "approval": "Human explicitly approved the previously reviewed scope on 2026-10-19. No second publishing approval was sought.",
+  "release": {
+    "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/tag/v1.0.0",
+    "tag": "v1.0.0",
+    "commit": "5960220d88d591813e418f8feeb5f75894aef188",
+    "is_draft": false,
+    "is_prerelease": false,
+    "tag_and_artifacts_unchanged_after_release": true
+  },
+  "skills_directory": {
+    "url": "https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout",
+    "listed": true,
+    "checked_at": "2026-10-19T23:51:12+08:00",
+    "evidence": "Public page contained installation command and actual Skill text; not merely HTTP 200.",
+    "audit": {
+      "provider": "Snyk",
+      "result": "Warn",
+      "severity": "MEDIUM",
+      "code": "W011",
+      "url": "https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout/security/snyk",
+      "cleared": false
+    }
+  },
+  "release_assets": [
+    {
+      "name": "workspace-scout-claude-v1.0.0.zip",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-claude-v1.0.0.zip",
+      "sha256": "96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db",
+      "unauthenticated_download_http": 200,
+      "hash_verified": true
+    },
+    {
+      "name": "workspace-scout-media-v1.0.0.zip",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-media-v1.0.0.zip",
+      "sha256": "68e6a066f49d46bc9e670d16836bfa2fde41189f920107ff5a82297766c595c6",
+      "unauthenticated_download_http": 200,
+      "hash_verified": true
+    },
+    {
+      "name": "workspace-scout-openai-v1.0.0.zip",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-openai-v1.0.0.zip",
+      "sha256": "fc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364",
+      "unauthenticated_download_http": 200,
+      "hash_verified": true
+    },
+    {
+      "name": "workspace-scout-skill-v1.0.0.zip",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-skill-v1.0.0.zip",
+      "sha256": "4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7",
+      "unauthenticated_download_http": 200,
+      "hash_verified": true
+    }
+  ],
+  "verification_scope": "Existing macOS with isolated temporary HOME/client configs; not a new OS VM. Six runtime files byte-matched for all three remote install paths; helper ran against a frozen example. No new model-effectiveness benchmark. A suppressed duplicate standalone Claude project entry required trust; the separately installed repository plugin was enabled and its inventory verified.",
+  "normalization": "Temporary roots and host validator paths are replaced with placeholders; relevant output tails retained. A null exit code means a non-shell tool result or no action, not success. Private logs, browser research and account/cache state are excluded.",
+  "own_traffic": "One successful Skills public-install command for verification with default telemetry, plus our own asset downloads. These are not organic adoption or traction. No install campaign or repeat Skills install after success.",
+  "checks": [
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:45+08:00",
+      "step": "approval-snapshot",
+      "command": "Verify user-approved source and package SHA-256 snapshot",
+      "exit_code": 0,
+      "output": "117 public files and four ZIP hashes exactly match approval snapshot. Explicit user approval received 2026-10-19 (Asia/Shanghai)."
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:49+08:00",
+      "step": "preflight-remote-main",
+      "command": "git ls-remote origin refs/heads/main",
+      "exit_code": 0,
+      "output": "d672d047fd457dfe1601fa1875a9f0a4601da758\trefs/heads/main\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:49+08:00",
+      "step": "preflight-local-tag",
+      "command": "git tag --list v1.0.0",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:53+08:00",
+      "step": "preflight-remote-tag",
+      "command": "git ls-remote --tags origin refs/tags/v1.0.0 refs/tags/v1.0.0^{}",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:54+08:00",
+      "step": "preflight-release-list",
+      "command": "gh release list --limit 100 --json tagName,isDraft,isPrerelease",
+      "exit_code": 0,
+      "output": "[]\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:54+08:00",
+      "step": "prepublish-build",
+      "command": "python3 scripts/build_release.py",
+      "exit_code": 0,
+      "output": "96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db  workspace-scout-claude-v1.0.0.zip\n68e6a066f49d46bc9e670d16836bfa2fde41189f920107ff5a82297766c595c6  workspace-scout-media-v1.0.0.zip\nfc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364  workspace-scout-openai-v1.0.0.zip\n4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7  workspace-scout-skill-v1.0.0.zip\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:54+08:00",
+      "step": "prepublish-unit-tests",
+      "command": "python3 -m unittest discover -s tests -p test_*.py",
+      "exit_code": 0,
+      "output": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.158s\n\nOK\n96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db  workspace-scout-claude-v1.0.0.zip\nfc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364  workspace-scout-openai-v1.0.0.zip\n4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7  workspace-scout-skill-v1.0.0.zip\n96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db  workspace-scout-claude-v1.0.0.zip\nfc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364  workspace-scout-openai-v1.0.0.zip\n4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7  workspace-scout-skill-v1.0.0.zip\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:55+08:00",
+      "step": "prepublish-installer-tests",
+      "command": "sh tests/test_install.sh",
+      "exit_code": 0,
+      "output": "Installer tests passed\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:55+08:00",
+      "step": "prepublish-manifest",
+      "command": "<VALIDATOR_PYTHON> .release-private/validate_manifest.py",
+      "exit_code": 0,
+      "output": "Portable manifest schema and local OpenAI field/asset checks passed; not portal validation.\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:56+08:00",
+      "step": "prepublish-claude-plugin",
+      "command": "claude plugin validate --strict plugins/workspace-scout",
+      "exit_code": 0,
+      "output": "Validating plugin manifest: <REPO>/plugins/workspace-scout/.claude-plugin/plugin.json\n\n✔ Validation passed\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:56+08:00",
+      "step": "prepublish-claude-catalog",
+      "command": "claude plugin validate --strict .",
+      "exit_code": 0,
+      "output": "Validating marketplace manifest: <REPO>/.claude-plugin/marketplace.json\n\n✔ Validation passed\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:42:56+08:00",
+      "step": "prepublish-whitespace",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:01+08:00",
+      "step": "release-stage",
+      "command": "git add -- .gitignore README.md SKILL.md references/candidate-record.md install.sh scripts/check_candidates.py tests/test_check_candidates.py tests/test_install.sh VERSION PRIVACY.md THIRD_PARTY.md scripts/build_release.py tests/test_release.py .claude-plugin/marketplace.json .agents/plugins/marketplace.json plugins/workspace-scout release/v1.0.0",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:01+08:00",
+      "step": "release-staged-files",
+      "command": "git diff --cached --name-only",
+      "exit_code": 0,
+      "output": ".agents/plugins/marketplace.json\n.claude-plugin/marketplace.json\n.gitignore\nPRIVACY.md\nREADME.md\nSKILL.md\nTHIRD_PARTY.md\nVERSION\ninstall.sh\nplugins/workspace-scout/.claude-plugin/plugin.json\nplugins/workspace-scout/.codex-plugin/plugin.json\nplugins/workspace-scout/LICENSE\nplugins/workspace-scout/README.md\nplugins/workspace-scout/assets/icon.svg\nplugins/workspace-scout/plugin.json\nplugins/workspace-scout/skills/workspace-scout/LICENSE\nplugins/workspace-scout/skills/workspace-scout/SKILL.md\nplugins/workspace-scout/skills/workspace-scout/references/candidate-record.md\nplugins/workspace-scout/skills/workspace-scout/references/check-input.md\nplugins/workspace-scout/skills/workspace-scout/references/search-guide.md\nplugins/workspace-scout/skills/workspace-scout/scripts/check_candidates.py\nreferences/candidate-record.md\nrelease/v1.0.0/AUDIT.md\nrelease/v1.0.0/RELEASE_NOTES.md\nrelease/v1.0.0/SUBMISSION.md\nrelease/v1.0.0/assets/README.md\nrelease/v1.0.0/assets/icon.svg\nrelease/v1.0.0/assets/london.png\nrelease/v1.0.0/assets/london.svg\nrelease/v1.0.0/assets/montreal.png\nrelease/v1.0.0/assets/montreal.svg\nrelease/v1.0.0/assets/overview.png\nrelease/v1.0.0/assets/overview.svg\nrelease/v1.0.0/assets/singapore.png\nrelease/v1.0.0/assets/singapore.svg\nrelease/v1.0.0/demos/README.md\nrelease/v1.0.0/demos/london.expected.json\nrelease/v1.0.0/demos/london.input.json\nrelease/v1.0.0/demos/london.request.txt\nrelease/v1.0.0/demos/montreal.expected.json\nrelease/v1.0.0/demos/montreal.input.json\nrelease/v1.0.0/demos/montreal.request.txt\nrelease/v1.0.0/demos/reports.md\nrelease/v1.0.0/demos/singapore.expected.json\nrelease/v1.0.0/demos/singapore.input.json\nrelease/v1.0.0/demos/singapore.request.txt\nrelease/v1.0.0/demos/sources.json\nrelease/v1.0.0/listing.json\nrelease/v1.0.0/manifest.json\nrelease/v1.0.0/marketing/awesome-submission.md\nrelease/v1.0.0/marketing/channels.md\nrelease/v1.0.0/marketing/outreach.md\nrelease/v1.0.0/marketing/reddit.md\nrelease/v1.0.0/marketing/show-hn-brief.md\nrelease/v1.0.0/marketing/x.md\nrelease/v1.0.0/publish-plan.md\nrelease/v1.0.0/verification.json\nscripts/build_release.py\nscripts/check_candidates.py\ntests/test_check_candidates.py\ntests/test_install.sh\ntests/test_release.py\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:01+08:00",
+      "step": "release-staged-whitespace",
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:01+08:00",
+      "step": "release-commit",
+      "command": "git commit -m Release Workspace Scout v1.0.0",
+      "exit_code": 0,
+      "output": "44 plugins/workspace-scout/skills/workspace-scout/references/candidate-record.md\n create mode 100644 plugins/workspace-scout/skills/workspace-scout/references/check-input.md\n create mode 100644 plugins/workspace-scout/skills/workspace-scout/references/search-guide.md\n create mode 100644 plugins/workspace-scout/skills/workspace-scout/scripts/check_candidates.py\n create mode 100644 release/v1.0.0/AUDIT.md\n create mode 100644 release/v1.0.0/RELEASE_NOTES.md\n create mode 100644 release/v1.0.0/SUBMISSION.md\n create mode 100644 release/v1.0.0/assets/README.md\n create mode 100644 release/v1.0.0/assets/icon.svg\n create mode 100644 release/v1.0.0/assets/london.png\n create mode 100644 release/v1.0.0/assets/london.svg\n create mode 100644 release/v1.0.0/assets/montreal.png\n create mode 100644 release/v1.0.0/assets/montreal.svg\n create mode 100644 release/v1.0.0/assets/overview.png\n create mode 100644 release/v1.0.0/assets/overview.svg\n create mode 100644 release/v1.0.0/assets/singapore.png\n create mode 100644 release/v1.0.0/assets/singapore.svg\n create mode 100644 release/v1.0.0/demos/README.md\n create mode 100644 release/v1.0.0/demos/london.expected.json\n create mode 100644 release/v1.0.0/demos/london.input.json\n create mode 100644 release/v1.0.0/demos/london.request.txt\n create mode 100644 release/v1.0.0/demos/montreal.expected.json\n create mode 100644 release/v1.0.0/demos/montreal.input.json\n create mode 100644 release/v1.0.0/demos/montreal.request.txt\n create mode 100644 release/v1.0.0/demos/reports.md\n create mode 100644 release/v1.0.0/demos/singapore.expected.json\n create mode 100644 release/v1.0.0/demos/singapore.input.json\n create mode 100644 release/v1.0.0/demos/singapore.request.txt\n create mode 100644 release/v1.0.0/demos/sources.json\n create mode 100644 release/v1.0.0/listing.json\n create mode 100644 release/v1.0.0/manifest.json\n create mode 100644 release/v1.0.0/marketing/awesome-submission.md\n create mode 100644 release/v1.0.0/marketing/channels.md\n create mode 100644 release/v1.0.0/marketing/outreach.md\n create mode 100644 release/v1.0.0/marketing/reddit.md\n create mode 100644 release/v1.0.0/marketing/show-hn-brief.md\n create mode 100644 release/v1.0.0/marketing/x.md\n create mode 100644 release/v1.0.0/publish-plan.md\n create mode 100644 release/v1.0.0/verification.json\n create mode 100644 scripts/build_release.py\n create mode 100644 tests/test_release.py\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:02+08:00",
+      "step": "release-history-scan",
+      "command": ".release-private/tools/gitleaks git . --log-opts=--all --redact --report-format json --report-path .release-private/publish-logs/release-gitleaks.json",
+      "exit_code": 0,
+      "output": "\n    ○\n    │╲\n    │ ○\n    ○ ░\n    ░    gitleaks\n\n11:44PM INF 4 commits scanned.\n11:44PM INF scanned ~436257 bytes (436.26 KB) in 111ms\n11:44PM INF no leaks found\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:02+08:00",
+      "step": "release-head",
+      "command": "git rev-parse HEAD",
+      "exit_code": 0,
+      "output": "5960220d88d591813e418f8feeb5f75894aef188\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:08+08:00",
+      "step": "release-push-main",
+      "command": "git push origin main",
+      "exit_code": 0,
+      "output": "To github.com:Nick-Zheng-Q/workspace-scout.git\n   d672d04..5960220  main -> main\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:08+08:00",
+      "step": "release-create-tag",
+      "command": "git tag -a v1.0.0 -m Workspace Scout v1.0.0",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:14+08:00",
+      "step": "release-push-tag",
+      "command": "git push origin refs/tags/v1.0.0",
+      "exit_code": 0,
+      "output": "To github.com:Nick-Zheng-Q/workspace-scout.git\n * [new tag]         v1.0.0 -> v1.0.0\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:24+08:00",
+      "step": "release-create",
+      "command": "gh release create v1.0.0 dist/workspace-scout-skill-v1.0.0.zip dist/workspace-scout-openai-v1.0.0.zip dist/workspace-scout-claude-v1.0.0.zip dist/workspace-scout-media-v1.0.0.zip dist/SHA256SUMS --verify-tag --title Workspace Scout v1.0.0 --notes-file release/v1.0.0/RELEASE_NOTES.md",
+      "exit_code": 0,
+      "output": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/tag/v1.0.0\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:44:25+08:00",
+      "step": "release-view",
+      "command": "gh release view v1.0.0 --json url,isDraft,isPrerelease,tagName,assets",
+      "exit_code": 0,
+      "output": "size\":398,\"state\":\"uploaded\",\"updatedAt\":\"2026-10-19T15:44:21Z\",\"url\":\"https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/SHA256SUMS\"},{\"apiUrl\":\"https://api.github.com/repos/Nick-Zheng-Q/workspace-scout/releases/assets/656694160\",\"contentType\":\"application/zip\",\"createdAt\":\"2026-10-19T15:44:21Z\",\"digest\":\"sha256:96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db\",\"downloadCount\":0,\"id\":\"RA_kwDOUvh0Ms4nJFuQ\",\"label\":\"\",\"name\":\"workspace-scout-claude-v1.0.0.zip\",\"size\":23731,\"state\":\"uploaded\",\"updatedAt\":\"2026-10-19T15:44:21Z\",\"url\":\"https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-claude-v1.0.0.zip\"},{\"apiUrl\":\"https://api.github.com/repos/Nick-Zheng-Q/workspace-scout/releases/assets/656694156\",\"contentType\":\"application/zip\",\"createdAt\":\"2026-10-19T15:44:21Z\",\"digest\":\"sha256:68e6a066f49d46bc9e670d16836bfa2fde41189f920107ff5a82297766c595c6\",\"downloadCount\":0,\"id\":\"RA_kwDOUvh0Ms4nJFuM\",\"label\":\"\",\"name\":\"workspace-scout-media-v1.0.0.zip\",\"size\":182758,\"state\":\"uploaded\",\"updatedAt\":\"2026-10-19T15:44:22Z\",\"url\":\"https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-media-v1.0.0.zip\"},{\"apiUrl\":\"https://api.github.com/repos/Nick-Zheng-Q/workspace-scout/releases/assets/656694157\",\"contentType\":\"application/zip\",\"createdAt\":\"2026-10-19T15:44:21Z\",\"digest\":\"sha256:fc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364\",\"downloadCount\":0,\"id\":\"RA_kwDOUvh0Ms4nJFuN\",\"label\":\"\",\"name\":\"workspace-scout-openai-v1.0.0.zip\",\"size\":24101,\"state\":\"uploaded\",\"updatedAt\":\"2026-10-19T15:44:21Z\",\"url\":\"https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-openai-v1.0.0.zip\"},{\"apiUrl\":\"https://api.github.com/repos/Nick-Zheng-Q/workspace-scout/releases/assets/656694136\",\"contentType\":\"application/zip\",\"createdAt\":\"2026-10-19T15:44:21Z\",\"digest\":\"sha256:4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7\",\"downloadCount\":0,\"id\":\"RA_kwDOUvh0Ms4nJFt4\",\"label\":\"\",\"name\":\"workspace-scout-skill-v1.0.0.zip\",\"size\":19980,\"state\":\"uploaded\",\"updatedAt\":\"2026-10-19T15:44:21Z\",\"url\":\"https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-skill-v1.0.0.zip\"}],\"isDraft\":false,\"isPrerelease\":false,\"tagName\":\"v1.0.0\",\"url\":\"https://github.com/Nick-Zheng-Q/workspace-scout/releases/tag/v1.0.0\"}\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:48:07+08:00",
+      "step": "public-release-web-view",
+      "command": "web.open https://github.com/Nick-Zheng-Q/workspace-scout/releases/tag/v1.0.0",
+      "exit_code": null,
+      "output": "Web tool returned the public Release page: Workspace Scout v1.0.0, tag v1.0.0, source commit 5960220, release notes and Assets 7 (five uploaded assets plus GitHub-generated source archives). This is a web-tool result, not a shell exit code.",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/tag/v1.0.0",
+      "tool_status": "content_returned"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:48:23+08:00",
+      "step": "public-remote-main",
+      "command": "git ls-remote https://github.com/Nick-Zheng-Q/workspace-scout.git refs/heads/main",
+      "exit_code": 124,
+      "output": "\nTimed out after 180 seconds."
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:48:57+08:00",
+      "step": "public-repo-eligibility",
+      "command": "gh api repos/Nick-Zheng-Q/workspace-scout --jq {full_name,private,stargazers_count,created_at,default_branch,html_url}",
+      "exit_code": 0,
+      "output": "{\"created_at\": \"2026-09-28T06:31:01Z\", \"default_branch\": \"main\", \"full_name\": \"Nick-Zheng-Q/workspace-scout\", \"html_url\": \"https://github.com/Nick-Zheng-Q/workspace-scout\", \"private\": false, \"stargazers_count\": 0}",
+      "note": "Read-only eligibility check. Zero stars is not proof of zero users; no independent adoption evidence is claimed."
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:50:35+08:00",
+      "step": "public-skills-install",
+      "command": "npm exec --yes --package skills@1.7.2 -- skills add Nick-Zheng-Q/workspace-scout --skill workspace-scout --agent codex claude-code --copy -y --json",
+      "exit_code": 0,
+      "output": "\n│\n●   codex  Agent detected — installing non-interactively\n│\n●  Selected 1 skill: workspace-scout\n\n│\n◇  Installation Summary ─────────────╮\n│                                    │\n│  ./.agents/skills/workspace-scout  │\n│    copy → Codex, Claude Code       │\n│                                    │\n├────────────────────────────────────╯\n\n[\n  {\n    \"name\": \"workspace-scout\",\n    \"status\": \"installed\",\n    \"source\": \"Nick-Zheng-Q/workspace-scout\",\n    \"ref\": null,\n    \"hash\": \"a4ab058e8c048b8dc76fa06219db1d6d017e1885c17e5042f7bcf796286ece35\",\n    \"path\": \"<ISOLATED_TEMP>/.agents/skills/workspace-scout\",\n    \"scope\": \"project\",\n    \"agents\": [\n      \"Codex\",\n      \"Claude Code\"\n    ],\n    \"mode\": \"copy\",\n    \"security\": null\n  }\n]\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:50:35+08:00",
+      "step": "public-skills-runtime-hashes",
+      "command": "Compare installed runtime SHA-256 hashes with the approved v1.0.0 manifest",
+      "exit_code": 0,
+      "output": "{\"SKILL.md\": true, \"LICENSE\": true, \"references/candidate-record.md\": true, \"references/check-input.md\": true, \"references/search-guide.md\": true, \"scripts/check_candidates.py\": true}"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:50:35+08:00",
+      "step": "public-skills-helper",
+      "command": "python3 <ISOLATED_TEMP>/.agents/skills/workspace-scout/scripts/check_candidates.py <REPO>/release/v1.0.0/demos/singapore.input.json",
+      "exit_code": 0,
+      "output": "{\"candidates\": [{\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"availability on requested dates\": \"unknown\", \"private call suitability\": \"unknown\", \"published hours cover weekday 9am to 5pm\": \"met\"}, \"id\": \"hive-lavender-eight-day-passes\", \"known_monthly\": 261.6, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"unconfirmed deposit\"], \"recurring\": [\"unconfirmed other compulsory charges\"], \"upfront\": [\"unconfirmed setup charges\"]}, \"upfront_budget_status\": \"not_set\"}, {\"hard_condition_gate\": \"verify\", \"hard_conditions\": {\"availability on requested dates\": \"unknown\", \"private call suitability\": \"unknown\", \"published hours cover weekday 9am to 5pm\": \"met\"}, \"id\": \"hive-lavender-part-time-ten-days\", \"known_monthly\": 299.75, \"known_refundable_deposit\": 0, \"known_upfront_nonrefundable\": 0, \"known_upfront_plus_deposit_excluding_first_month\": 0, \"monthly_budget_status\": \"unknown\", \"required_costs_complete\": false, \"unknown_required_costs\": {\"deposit\": [\"unconfirmed deposit\"], \"recurring\": [\"unconfirmed other compulsory charges\"], \"upfront\": [\"unconfirmed setup charges\"]}, \"upfront_budget_status\": \"not_set\"}], \"currency\": \"SGD\"}\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:12+08:00",
+      "step": "skills-detail-page",
+      "command": "curl -q --http1.1 --fail --location --max-time 60 --silent --show-error --output <REPO>/.release-private/publish-logs/skills-detail.html --write-out HTTP %{http_code} https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout",
+      "exit_code": 0,
+      "output": "HTTP 200"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:12+08:00",
+      "step": "skills-directory-content-check",
+      "command": "Inspect public Skills.sh page body after legitimate public installation",
+      "exit_code": 0,
+      "output": "{\"checked_at\": \"2026-10-19T23:51:12+08:00\", \"url\": \"https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout\", \"curl_exit_code\": 0, \"http_result\": \"HTTP 200\", \"listed\": true, \"note\": \"Public page exposes installation instructions and actual Skill content; no organic adoption claim.\", \"title\": \"workspace-scout — nick-zheng-q/workspace-scout\", \"visible_text_excerpt\": \"workspace-scout — nick-zheng-q/workspace-scout Skills Navigate workspace-scout Installation Command Prompt $ npx skills add https://github.com/nick-zheng-q/workspace-scout --skill workspace-scout SKILL.md 工作空间发现、适配评估与入驻条件核查 目标是交付少数 值得联系或实地考察的「具体空间＋具体方案」 ，并让用户知道下一步要核实什么；不要宣布已经找到“最佳工作室”，也不要用一个综合分数掩盖未知项。 先确定需求 先让用户描述业务和空间内的实际活动，再只追问会改变搜索或淘汰结果的缺口：人数与设备、独立性/隐私、接待/拍摄/录音、开放时间和使用频率、设备留置、位置硬约束、主体和地址服务需求、持续预算/前期资金/期限/退出弹性。区分 注册地址需求、日常工作需求、设备存放需求 ；不要假设其中一个能替代另一个。将每项标为硬条件、偏好或待澄清；关键硬条件缺失时先问，不要替用户猜。 用户尚未定区域时，不把举例提到的地点变成硬条件。记录可接受的多个区域（例如前海、福田）和通勤/客户距离等判断依据，在每个区域寻找具体方案，再按同一业务需求和费用口径横向比较；如政策资格取决于注册地、经营地或场地所在区，分别记录，不默认它们相同。 首版面向软件、设计、咨询、内容制作等个人及小团队。餐饮、生产、实验室等需要另行核查行业、物业和安全要求；遇到这类需求，说明本 Skill 的办公评估不能证明其可用。 搜索词和支持项目须从 本次用户的业务、国家/地区、可接受范围及当地实际供给 产生；保留地名、机构和空间的当地原文，用当地来源确认搜索用词，必要时并用当地语言与英语。不要把某城市、OPC、公众号、英语或某种域名后缀当作全球默认入口。用户已提供且相关的行业、企业阶段、学校/机构关联可用于反向寻找空间项目，但不为广撒网索取证件或猜测身份资格。 两种入口，同一套核查 Show more Installs – Repository nick-zheng-q/wo…ce-scout First Seen – Security Audits Snyk Warn\"}"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:34+08:00",
+      "step": "public-codex-marketplace-add",
+      "command": "codex plugin marketplace add Nick-Zheng-Q/workspace-scout --ref v1.0.0 --json",
+      "exit_code": 0,
+      "output": "{\n  \"marketplaceName\": \"workspace-scout-marketplace\",\n  \"installedRoot\": \"<ISOLATED_TEMP>/codex/.tmp/marketplaces/workspace-scout-marketplace\",\n  \"alreadyAdded\": false\n}\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:34+08:00",
+      "step": "public-codex-plugin-add",
+      "command": "codex plugin add workspace-scout@workspace-scout-marketplace --json",
+      "exit_code": 0,
+      "output": "{\n  \"pluginId\": \"workspace-scout@workspace-scout-marketplace\",\n  \"name\": \"workspace-scout\",\n  \"marketplaceName\": \"workspace-scout-marketplace\",\n  \"version\": \"1.0.0\",\n  \"installedPath\": \"<ISOLATED_TEMP>/codex/plugins/cache/workspace-scout-marketplace/workspace-scout/1.0.0\",\n  \"authPolicy\": \"ON_INSTALL\"\n}\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:34+08:00",
+      "step": "public-codex-runtime-hashes",
+      "command": "Compare installed runtime SHA-256 hashes with the approved v1.0.0 manifest",
+      "exit_code": 0,
+      "output": "{\"SKILL.md\": true, \"LICENSE\": true, \"references/candidate-record.md\": true, \"references/check-input.md\": true, \"references/search-guide.md\": true, \"scripts/check_candidates.py\": true}"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:34+08:00",
+      "step": "public-codex-plugin-list",
+      "command": "codex plugin list --json",
+      "exit_code": 0,
+      "output": "{\n  \"installed\": [\n    {\n      \"pluginId\": \"workspace-scout@workspace-scout-marketplace\",\n      \"name\": \"workspace-scout\",\n      \"marketplaceName\": \"workspace-scout-marketplace\",\n      \"version\": \"1.0.0\",\n      \"installed\": true,\n      \"enabled\": true,\n      \"source\": {\n        \"source\": \"local\",\n        \"path\": \"<ISOLATED_TEMP>/codex/.tmp/marketplaces/workspace-scout-marketplace/plugins/workspace-scout\"\n      },\n      \"marketplaceSource\": {\n        \"sourceType\": \"git\",\n        \"source\": \"https://github.com/Nick-Zheng-Q/workspace-scout.git\"\n      },\n      \"installPolicy\": \"AVAILABLE\",\n      \"authPolicy\": \"ON_INSTALL\"\n    }\n  ],\n  \"available\": []\n}\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:56+08:00",
+      "step": "public-claude-marketplace-add",
+      "command": "claude plugin marketplace add Nick-Zheng-Q/workspace-scout",
+      "exit_code": 0,
+      "output": "Adding marketplace…SSH not configured, cloning via HTTPS: https://github.com/Nick-Zheng-Q/workspace-scout.git\nRefreshing marketplace cache (timeout: 120s)…\nCloning repository (timeout: 120s): https://github.com/Nick-Zheng-Q/workspace-scout.git\nClone complete, validating marketplace…\nCleaning up old marketplace cache…\n✔ Successfully added marketplace: workspace-scout-marketplace (declared in user settings)\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:57+08:00",
+      "step": "public-claude-plugin-install",
+      "command": "claude plugin install workspace-scout@workspace-scout-marketplace",
+      "exit_code": 0,
+      "output": "Installing plugin \"workspace-scout@workspace-scout-marketplace\"...✔ Successfully installed plugin: workspace-scout@workspace-scout-marketplace (scope: user)\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:57+08:00",
+      "step": "public-claude-plugin-list",
+      "command": "claude plugin list --json",
+      "exit_code": 0,
+      "output": "[\n  {\n    \"id\": \"workspace-scout@workspace-scout-marketplace\",\n    \"version\": \"1.0.0\",\n    \"scope\": \"user\",\n    \"enabled\": true,\n    \"installPath\": \"<ISOLATED_TEMP>/claude/plugins/cache/workspace-scout-marketplace/workspace-scout/1.0.0\",\n    \"installedAt\": \"2026-10-19T15:51:57.066Z\",\n    \"lastUpdated\": \"2026-10-19T15:51:57.066Z\"\n  },\n  {\n    \"id\": \"(suppressed)@skills-dir\",\n    \"version\": \"unknown\",\n    \"scope\": \"project\",\n    \"enabled\": false,\n    \"installPath\": \"\",\n    \"notes\": [\n      \"1 project-scope plugin directory under ./.claude/skills/ was not loaded because this workspace was not trusted when plugins were scanned. After accepting the trust dialog, run /reload-plugins (or relaunch) to load it.\"\n    ]\n  }\n]\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:57+08:00",
+      "step": "public-claude-runtime-hashes",
+      "command": "Compare installed runtime SHA-256 hashes with the approved v1.0.0 manifest",
+      "exit_code": 0,
+      "output": "{\"SKILL.md\": true, \"LICENSE\": true, \"references/candidate-record.md\": true, \"references/check-input.md\": true, \"references/search-guide.md\": true, \"scripts/check_candidates.py\": true}"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:51:57+08:00",
+      "step": "public-claude-plugin-details",
+      "command": "claude plugin details workspace-scout@workspace-scout-marketplace",
+      "exit_code": 0,
+      "output": "workspace-scout 1.0.0\n  Discover specific workspace plans for solo founders and small teams. Compare practical fit, admission requirements, full costs, conditional support and exit terms, with dated evidence and questions to ask next.\n  Source: workspace-scout@workspace-scout-marketplace\n\nComponent inventory\n  Skills (1)  workspace-scout\n  Agents (0)\n  Hooks (0)\n  MCP servers (0)\n  LSP servers (0)\n\nProjected token cost\n  Always-on:   ~31 tok   added to every session\n\nPer-component (rounded)\n  component        always-on  on-invoke\n  workspace-scout        ~30       ~850\n\n  On-invoke cost is paid each time a skill or agent fires.\n  Token counts are estimates and may differ from actual usage.\n"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:04+08:00",
+      "step": "public-release-page",
+      "command": "curl -q --http1.1 --fail --location --max-time 60 --silent --show-error --output <ISOLATED_TEMP>/downloads/release.html --write-out HTTP %{http_code} https://github.com/Nick-Zheng-Q/workspace-scout/releases/tag/v1.0.0",
+      "exit_code": 0,
+      "output": "HTTP 200"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:06+08:00",
+      "step": "download-workspace-scout-claude-v1.0.0.zip",
+      "command": "curl -q --http1.1 --fail --location --max-time 90 --silent --show-error --output <ISOLATED_TEMP>/downloads/workspace-scout-claude-v1.0.0.zip --write-out HTTP %{http_code} https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-claude-v1.0.0.zip",
+      "exit_code": 0,
+      "output": "HTTP 200"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:06+08:00",
+      "step": "hash-workspace-scout-claude-v1.0.0.zip",
+      "command": "SHA-256 of unauthenticated public Release download",
+      "exit_code": 0,
+      "output": "96602691501f1b848e06ab434c1644f238cec5ec8c8fd13ed6eeed9a20b162db",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-claude-v1.0.0.zip"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:08+08:00",
+      "step": "download-workspace-scout-media-v1.0.0.zip",
+      "command": "curl -q --http1.1 --fail --location --max-time 90 --silent --show-error --output <ISOLATED_TEMP>/downloads/workspace-scout-media-v1.0.0.zip --write-out HTTP %{http_code} https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-media-v1.0.0.zip",
+      "exit_code": 0,
+      "output": "HTTP 200"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:08+08:00",
+      "step": "hash-workspace-scout-media-v1.0.0.zip",
+      "command": "SHA-256 of unauthenticated public Release download",
+      "exit_code": 0,
+      "output": "68e6a066f49d46bc9e670d16836bfa2fde41189f920107ff5a82297766c595c6",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-media-v1.0.0.zip"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:10+08:00",
+      "step": "download-workspace-scout-openai-v1.0.0.zip",
+      "command": "curl -q --http1.1 --fail --location --max-time 90 --silent --show-error --output <ISOLATED_TEMP>/downloads/workspace-scout-openai-v1.0.0.zip --write-out HTTP %{http_code} https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-openai-v1.0.0.zip",
+      "exit_code": 0,
+      "output": "HTTP 200"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:10+08:00",
+      "step": "hash-workspace-scout-openai-v1.0.0.zip",
+      "command": "SHA-256 of unauthenticated public Release download",
+      "exit_code": 0,
+      "output": "fc3fc97d68a25fd1dcb649a467b07565fbfc2c52f3484b8a0ecc3b0314599364",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-openai-v1.0.0.zip"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:12+08:00",
+      "step": "download-workspace-scout-skill-v1.0.0.zip",
+      "command": "curl -q --http1.1 --fail --location --max-time 90 --silent --show-error --output <ISOLATED_TEMP>/downloads/workspace-scout-skill-v1.0.0.zip --write-out HTTP %{http_code} https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-skill-v1.0.0.zip",
+      "exit_code": 0,
+      "output": "HTTP 200"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:12+08:00",
+      "step": "hash-workspace-scout-skill-v1.0.0.zip",
+      "command": "SHA-256 of unauthenticated public Release download",
+      "exit_code": 0,
+      "output": "4ff58907555696717aac40eca896a12b55a3cfb65e645229086837cac894cba7",
+      "url": "https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/workspace-scout-skill-v1.0.0.zip"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:52:14+08:00",
+      "step": "download-checksums",
+      "command": "curl -q --http1.1 --fail --location --max-time 60 --silent --show-error --output <ISOLATED_TEMP>/downloads/SHA256SUMS --write-out HTTP %{http_code} https://github.com/Nick-Zheng-Q/workspace-scout/releases/download/v1.0.0/SHA256SUMS",
+      "exit_code": 0,
+      "output": "HTTP 200"
+    },
+    {
+      "time_asia_shanghai": "2026-10-19T23:56:55+08:00",
+      "step": "skills-snyk-audit",
+      "command": "curl --http1.1 --fail --location https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout/security/snyk",
+      "exit_code": 0,
+      "output": "{\"page_retrieved\": true, \"audit_result\": \"Warn\", \"severity\": \"MEDIUM\", \"issue_code\": \"W011\", \"summary\": \"Researching material written by others can expose an agent to hostile embedded instructions. This is a risk notice, not proof of an observed exploit. The warning remains; we do not label it cleared.\"}",
+      "url": "https://skills.sh/nick-zheng-q/workspace-scout/workspace-scout/security/snyk",
+      "security_pass": false
+    }
+  ],
+  "not_attempted": [
+    {
+      "platform": "OpenAI public Plugins Directory",
+      "status": "not_submitted",
+      "exit_code": null,
+      "entry_url": "https://platform.openai.com/plugins",
+      "reason": "No connected supported submission interface; verified publishing identity, org/project permissions and rights/policy attestations need creator confirmation."
+    },
+    {
+      "platform": "Claude Directory",
+      "status": "not_submitted",
+      "exit_code": null,
+      "entry_url": "https://claude.ai/directory/manage",
+      "reason": "No supported authenticated portal interface; existing paid-plan eligibility and publishing/policy rights not established. No purchase."
+    },
+    {
+      "platform": "Awesome Lists PRs",
+      "status": "not_submitted",
+      "exit_code": null,
+      "entry_url": "https://github.com/Nick-Zheng-Q/workspace-scout/blob/main/release/v1.0.0/marketing/channels.md",
+      "reason": "Checked targets require adoption/star thresholds, human-only submissions or unresolved copy-in licensing compatibility. Current repository has 0 stars; no adoption assertion or ineligible PR."
+    },
+    {
+      "platform": "X",
+      "status": "draft_only",
+      "exit_code": null,
+      "entry_url": "https://github.com/Nick-Zheng-Q/workspace-scout/blob/main/release/v1.0.0/marketing/x.md",
+      "reason": "No authorized official posting API/CLI available. No website scripting or unsolicited outreach."
+    },
+    {
+      "platform": "Reddit",
+      "status": "draft_only",
+      "exit_code": null,
+      "entry_url": "https://github.com/Nick-Zheng-Q/workspace-scout/blob/main/release/v1.0.0/marketing/reddit.md",
+      "reason": "No authenticated posting interface and complete current subreddit rules could not be verified."
+    },
+    {
+      "platform": "Show HN",
+      "status": "human_authored_only",
+      "exit_code": null,
+      "entry_url": "https://news.ycombinator.com/submit",
+      "reason": "Current rules prohibit generated posts/comments and automated posting. Factual reference only, not a post draft."
+    },
+    {
+      "platform": "Creator outreach",
+      "status": "research_only",
+      "exit_code": null,
+      "entry_url": "https://github.com/Nick-Zheng-Q/workspace-scout/blob/main/release/v1.0.0/marketing/outreach.md",
+      "reason": "Professional shortlist prepared. No messages, paid placements or bulk campaign authorized/executed."
+    }
+  ],
+  "report_commit_note": "This record precedes its own documentation commit/push; those final exit codes and commit URL are reported in the chat, not fabricated inside a self-referential commit."
+}

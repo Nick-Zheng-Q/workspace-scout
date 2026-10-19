@@ -1,5 +1,7 @@
 # v1.0.0 release audit — 2026-10-19
 
+**Publication update:** GitHub v1.0.0 and Skills.sh are now public; remote installations and downloads were verified. Snyk W011 remains a warning. The audit below is the preserved preparation snapshot; see [actual execution results](EXECUTION.md).
+
 **Stage: A/B and marketing preparation complete; awaiting consolidated approval. No new push, public Release, directory submission, PR, social post or outreach has been executed.** This repository was already public. This document is a preparation snapshot, not the final publication report.
 
 ## Scope and decision

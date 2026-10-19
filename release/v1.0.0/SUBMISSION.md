@@ -1,5 +1,7 @@
 # Submission material and exact handoff points
 
+**Publication update:** GitHub packages and repository plugins are published; Skills.sh inclusion is verified. OpenAI and Claude central-directory submissions remain unsubmitted. See [actual execution results](EXECUTION.md).
+
 Prepared 2026-10-19. **Not submitted; no public directory approval claimed.** Existing GitHub CLI authentication is sufficient for repository publication; it does not verify a developer identity or authenticate any other directory. No purchase or new paid plan is authorized.
 
 ## Shared listing fields

@@ -1,4 +1,6 @@
-# Execution plan — awaiting approval
+# Execution plan — approved
+
+**User approval received 2026-10-19.** This is the original plan; see [executed results](EXECUTION.md). Historical “not yet executed” labels below describe the preparation stage, not current status.
 
 **Do not execute publishing steps before one explicit consolidated approval.** No remote push, Release, PR, directory submission or social post was made during preparation. The repository was already public before this request.
 
